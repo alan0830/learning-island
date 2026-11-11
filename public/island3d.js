@@ -606,8 +606,6 @@
     }
     camera.updateProjectionMatrix();
   }
-    camera.updateProjectionMatrix();
-  }
 
   let resizeObserver = null;
 
