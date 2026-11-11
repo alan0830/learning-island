@@ -2,14 +2,35 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>學習島 — 七年級翰林版</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>學習島 — 國中群島學習平臺（七年級翰林版）</title>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<!-- Google Fonts：粉圓體 (Huninn)、思源黑體 (Noto Sans TC)、Fredoka、Nunito、JetBrains Mono、Bebas Neue -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Huninn&family=Noto+Sans+TC:wght@400;500;700;900&family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800&family=JetBrains+Mono:wght@500;700&family=Bebas+Neue&display=swap">
+
 <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-<header><h1>🏝️ 學習島 <span style="font-size:14px">七年級翰林版上學期</span></h1><span id="userbar"></span></header>
-<main id="app"><p>載入中…</p></main>
+
+<div id="app">
+  <div style="padding: 40px; text-align: center; color: #8ea3aa;">正在駛向學習群島…</div>
+</div>
+
+<div id="modal-container"></div>
+
+<!-- 離線與本地支援之 3D 函式庫 -->
+<script src="/vendor/three.min.js"></script>
+<script src="/vendor/OrbitControls.js"></script>
+
+<!-- 群島向量藝術與 3D 場景模組 -->
+<script src="/art.js"></script>
+<script src="/island3d.js"></script>
+
+<!-- 核心業務邏輯與介面互動控制器 -->
 <script src="/app.js"></script>
+
 </body>
 </html>
