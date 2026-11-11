@@ -126,6 +126,7 @@ function importQuestionsDoc(doc) {
     stem=excluded.stem, options=excluded.options, answer=excluded.answer, explanation=excluded.explanation,
     concept=excluded.concept, difficulty=excluded.difficulty, exam_focus=excluded.exam_focus, version=excluded.version`);
   const tx = db.transaction(() => {
+    db.prepare('DELETE FROM questions').run();
     for (const q of doc.questions) {
       upsert.run(q.id, q.subject_id, q.chapter_id, q.stem, JSON.stringify(q.options), q.answer, q.explanation,
         q.concept || '', q.difficulty || 'basic', q.exam_focus ? 1 : 0, doc.version || 1);
@@ -287,13 +288,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/api/health', (req, res) => res.json({ ok: true, version: getMeta('questions_version') || '0' }));
 app.get('/api/content', (req, res) => {
   const doc = getQuestionsDoc();
+  const qCount = db.prepare('SELECT COUNT(*) n FROM questions').get().n;
   res.json({
     subjects: doc.subjects,
     chapters: doc.chapters,
     resources: doc.resources || [],
     video_resources: doc.video_resources || [],
     version: getMeta('questions_version') || '0',
-    questions_count: doc.questions?.length || 0
+    questions_count: qCount
   });
 });
 

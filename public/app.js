@@ -111,7 +111,7 @@ async function renderHome() {
   const totalStars = (stats?.chapters || []).reduce((a, c) => a + c.stars, 0);
   const maxStars = (content?.chapters || []).length * 3;
   const mastered = (stats?.chapters || []).reduce((a, c) => a + c.mastered, 0);
-  const totalQ = content?.questions_count || 396;
+  const totalQ = content?.questions_count || 852;
 
   app.innerHTML = `
     <div class="portal-sea">
@@ -229,7 +229,7 @@ async function openIsland(subjectId, initialChapterId) {
 
         <!-- 底部提示氣泡 -->
         <div class="stage-hud-bottom">
-          點一座島開始挑戰 · 島旁的小船載著歷屆會考題與綜合複習卷
+          點選小島探索重點講義 · 點擊主島「歷屆與會考複習卷」立即測驗
         </div>
       </div>
 
@@ -336,7 +336,7 @@ function renderDrawerIndex() {
     <!-- 標籤頁切換 -->
     <div class="drawer-tabs">
       <button class="drawer-tab ${drawerTab === 'island' ? 'active' : ''}" onclick="renderDrawerIndex()">島嶼學習</button>
-      <button class="drawer-tab ${drawerTab === 'paper' ? 'active' : ''}" onclick="openPaperDrawer()">會考小船 / 複習試卷</button>
+      <button class="drawer-tab ${drawerTab === 'paper' ? 'active' : ''}" onclick="openPaperDrawer()">⛵ 歷屆與會考複習卷</button>
     </div>
 
     ${currentSubject.id === 'patty' ? `

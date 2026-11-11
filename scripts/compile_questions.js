@@ -28,12 +28,12 @@ for (const mod of modules) {
 console.log(`Gathered ${allChapters.length} chapters and ${allQuestions.length} questions.`);
 
 // Validation
-if (allChapters.length !== 33) {
-  throw new Error(`Expected 33 chapters, got ${allChapters.length}`);
+if (allChapters.length !== 71) {
+  throw new Error(`Expected 71 chapters, got ${allChapters.length}`);
 }
 
-if (allQuestions.length !== 396) {
-  throw new Error(`Expected 396 questions, got ${allQuestions.length}`);
+if (allQuestions.length !== 852) {
+  throw new Error(`Expected 852 questions, got ${allQuestions.length}`);
 }
 
 const qMap = new Map();
@@ -74,9 +74,9 @@ if (!subjects.some(s => s.id === 'patty')) {
 }
 
 const compiled = {
-  version: 4,
-  title: "學習島嶼題庫（七年級翰林版 + Patty 英文特訓島）",
-  note: "依據臺灣 108 課綱教材與 Patty 英文會考/英檢專題整合，收錄 8 大科目、33 大單元、共 396 道核心題庫與素養精選詳解。",
+  version: 5,
+  title: "學習島嶼題庫（七年級翰林版完整課綱 + Patty 英文特訓島）",
+  note: "依據臺北市立興雅國民中學 115 學年度第 1 學期各科定期評量範圍與臺灣 108 課綱教材建構，收錄 8 大科目、71 大章節、共 852 道核心題庫與詳解。",
   subjects,
   chapters: allChapters,
   questions: allQuestions,
@@ -85,5 +85,5 @@ const compiled = {
 };
 
 fs.writeFileSync(originalPath, JSON.stringify(compiled, null, 2), 'utf8');
-console.log('Successfully compiled data/questions.json with 33 chapters and 396 questions!');
+console.log('Successfully compiled data/questions.json with 71 chapters and 852 questions!');
 

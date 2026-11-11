@@ -1,727 +1,2712 @@
 'use strict';
 
 module.exports = {
-  chapters: [
+  "chapters": [
     {
-      id: "eng1",
-      subject_id: "eng",
-      title: "第 1 章 Who's That Handsome Boy?",
-      subtitle: "be 動詞現在式、人稱與指示代名詞、家庭成員與外貌描寫",
-      exam_focus: true,
-      key_points: [
-        "be 動詞的現在式變化：主詞與 be 動詞嚴格搭配——I am (I'm)、You are (You're)、He/She/It is (He's, She's, It's)、We/They are (We're, They're)。",
-        "be 動詞的疑問句與簡答：將 be 動詞移至句首——「Are you a student?」肯定簡答：「Yes, I am.」（肯定簡答不可縮寫為 Yes, I'm！）；否定簡答：「No, I'm not. / No, I am not.」。",
-        "指示代名詞單複數：近處用 this（複數 these）、遠處用 that（複數 those）。注意 this is 不能縮寫，that is 可縮寫為 that's。",
-        "人稱代名詞主格與所有格：I → my, you → your, he → his, she → her, it → its, we → our, they → their。",
-        "Who 與 Whose 之辨析：Who 是疑問代名詞「誰」（Who is that boy? 那男孩是誰？）；Whose 是所有格疑問詞「誰的」（Whose pen is this? 這是誰的筆？）。",
-        "人物外貌特徵形容詞：tall（高的）、short（矮的）、slim（苗條的）、cute（可愛的）、handsome（英俊帥氣的）、friendly（親切友善的）。"
+      "id": "eng1",
+      "subject_id": "eng",
+      "title": "Starter 基礎入門與教室美語",
+      "subtitle": "26 字母大小寫、母音子音發音規則與課堂日常用語（一段範圍）",
+      "exam_focus": true,
+      "key_points": [
+        "26 字母規範書寫：正確掌握印刷體大小寫字母的格線位置（上格、中格、下格），注意容易混淆的 b/d、p/q、u/v。",
+        "自然發音五大短母音：a (/æ/)、e (/e/)、i (/ɪ/)、o (/ɑ/)、u (/ʌ/)，以及常見子音拼讀規則（如 c 在 e/i/y 前發 /s/，其餘發 /k/）。",
+        "常用問候與應對語句：Good morning / afternoon / evening; How are you? - I'm fine, thank you. Nice to meet you.",
+        "課堂生活實用英語指令：Open your book; Close your book; Listen carefully; Stand up; Sit down; Raise your hand.",
+        "表達感謝與道別：Thank you very much; You're welcome; See you tomorrow; Have a good weekend.",
+        "禮貌請求句型：Please come in; May I go to the restroom?"
       ],
-      common_mistakes: [
-        "肯定簡答絕不可使用縮寫：例如回答「Are you hungry?」只能說「Yes, I am.」，絕不能寫成「Yes, I'm.」。",
-        "混淆 Who's 與 Whose：Who's 是「Who is」或「Who has」的縮寫；Whose 則是問所屬關係的「誰的」（Whose dog is that?）。",
-        "it's 與 its 的拼寫混淆：it's 是「it is」的縮寫；its 才是中性無生命名詞的所有格（例如：The cat is licking its paws.）。",
-        "指示代名詞複數後遺漏複數名詞：These are books（不是 These are book）。"
+      "common_mistakes": [
+        "大小寫字母筆順與位置錯位：例如將小寫字母 p 或 y 寫在上兩格，或把 b 與 d 鏡像搞混。",
+        "母音發音長短音混淆：如 /ɪ/（ship）與 /i/（sheep）的唇形與發音長度差異。",
+        "漏掉禮貌應答：當對方說 Thank you 時，不可只回答 Yes，應禮貌回應 You're welcome 或 No problem。"
       ],
-      think: "試著用 3 句英文介紹你的家庭成員或最要好的朋友，並正確使用 be 動詞與形容詞（例如：This is my brother. He is tall and friendly.）。"
+      "think": "試著在房間裡環顧四周，找出五樣文具或傢俱，大聲用自然發音拼出它們的英文單字，並注意母音的正確唇形。"
     },
     {
-      id: "eng2",
-      subject_id: "eng",
-      title: "第 2 章 Where Are My Pencils?",
-      subtitle: "地方介系詞、Where 疑問句、名詞複數規則與生活用品",
-      exam_focus: true,
-      key_points: [
-        "常見地方介系詞精準用法：in（在……裡面）、on（在……表面上）、under（在……下方）、behind（在……背後）、in front of（在……前面）、next to（在……隔壁）、between A and B（在 A 與 B 之間）。",
-        "Where 問句句型結構：問單數——Where is the pencil? It is on the desk. / 問複數——Where are the pencils? They are in the pencil case.",
-        "名詞單複數規則變化：一般名詞字尾 +s（books, desks）；字尾為 s, sh, ch, x, o 時 +es（buses, boxes, watches）；字尾為子音 + y 時去 y 改 +ies（baby → babies）；字尾為 f 或 fe 時去 f/fe 改 +ves（leaf → leaves, knife → knives）。",
-        "不規則名詞複數：man → men, woman → women, child → children, foot → feet, tooth → teeth, mouse → mice, fish → fish, sheep → sheep。",
-        "There is 與 There are 句型：表「某處有某物」——There is + 單數可數名詞 / 不可數名詞；There are + 複數可數名詞。",
-        "文具與日常用品核心字彙：pencil（鉛筆）、eraser（橡皮擦）、ruler（尺）、pencil case（鉛筆盒）、notebook（筆記本）、backpack（後背包）。"
+      "id": "eng2",
+      "subject_id": "eng",
+      "title": "Unit 1 Hello, I'm...",
+      "subtitle": "be動詞現在式（am/is/are）、主格代名詞與自我介紹（一段範圍）",
+      "exam_focus": true,
+      "key_points": [
+        "主格人稱代名詞與 be 動詞之搭配：I am (I'm); You are (You're); He/She/It is (He's/She's/It's); We/You/They are (We're/They're)。",
+        "be 動詞的否定句結構：主詞 + be 動詞 + not（am not 不能縮寫為 amn't；is not 縮寫為 isn't；are not 縮寫為 aren't）。",
+        "be 動詞的 Yes/No 問句與簡答：Is he a student? - Yes, he is. / No, he isn't.（肯定簡答不可縮寫為 Yes, he's）。",
+        "自我介紹基本句型：My name is Kevin. / I am a junior high school student. / I am twelve years old.",
+        "稱謂詞的使用：Mr.（先生）、Ms.（女士，婚姻狀況不明或不願指明）、Mrs.（已婚女士/太太）、Miss（未婚小姐）。",
+        "Wh- 疑問詞 Who 的用法：Who is that boy? - He is my classmate, Leo."
       ],
-      common_mistakes: [
-        "in front of 與 in the front of 之別：in front of 指在物體外部的前方（The car is in front of the house.）；in the front of 指在物體內部的前排（The teacher is sitting in the front of the bus.）。",
-        "複數名詞前面不可加 a 或 an：可以說 a book 或 books，但絕對不能說 a books！",
-        "Where 問句回答不可用 Yes 或 No：Where 是詢問方位的特殊疑問詞，回答必須直接說明地點，不可回答 Yes/No。"
+      "common_mistakes": [
+        "肯定簡答錯誤縮寫：回答 Yes, I am. 不可寫成 Yes, I'm.；Yes, she is. 不可寫成 Yes, she's.。",
+        "人稱代名詞與 be 動詞不一致：例如誤寫 He are a teacher 或 They is my friends。",
+        "詢問年齡常誤加 year：應為 He is twelve years old.（不可漏掉 s）或直接說 He is twelve。"
       ],
-      think: "環顧你的書桌或書包，用英文 Where 問句尋找兩樣文具，並用地方介系詞（in, on, under, behind）回答它們確切的位置。"
+      "think": "如果要向一位來自國外的新同學介紹自己與身邊最要好的兩位朋友，你會使用哪些 be 動詞句型完整介紹大家的姓名與角色？"
     },
     {
-      id: "eng3",
-      subject_id: "eng",
-      title: "第 3 章 Open the Magic Door",
-      subtitle: "祈使句用法、助動詞 can 的能力與請求、校園守則與生活標誌",
-      exam_focus: true,
-      key_points: [
-        "祈使句的本質與結構：向對方（you）提出命令、請求、叮嚀或禁止，因此省略主詞 You，句首一律使用原形動詞（Base Verb），例如：「Open the door.」、「Listen to the teacher.」。",
-        "否定祈使句句型：在原形動詞前加上 Don't（Do not），例如：「Don't run in the hallway.」、「Don't be late for school.」（注意 be 動詞的原形是 be）。",
-        "Please 的禮貌用法與標點規則：Please 置於句首時後面不加逗號（Please sit down.）；Please 置於句尾時前方必須加上逗號（Sit down, please.）。",
-        "助動詞 can 的用法：can 表「能力（會/能夠）」或「請求許可（可以）」，後面一律接原形動詞（S + can + V. / Can you help me?）。",
-        "Let's 表提議倡導：Let's 是 Let us 的縮寫，意為「我們一起……吧」，後面同樣接原形動詞（Let's play basketball. 否定為 Let's not waste time.）。",
-        "常見生活規則與標誌：No eating or drinking（禁止飲食）、Be quiet（保持肅靜）、Wash your hands（勤洗手）、Turn off your phone（請關機）。"
+      "id": "eng3",
+      "subject_id": "eng",
+      "title": "Unit 2 Meet My Family",
+      "subtitle": "家庭成員稱謂、名詞所有格（'s）與指示代名詞（一段範圍）",
+      "exam_focus": true,
+      "key_points": [
+        "核心家庭成員字彙：father (dad), mother (mom), parents, brother, sister, grandfather, grandmother, grandparents, cousin, uncle, aunt。",
+        "名詞所有格結構：單數名詞與不以 s 結尾的複數名詞加 's（Tom's book, the children's toys）；以 s 結尾的規則複數名詞直接加 '（the boys' balls）。",
+        "共同所有 vs 個別所有：Tom and Mary's father（兩人共同的父親）；Tom's and Mary's fathers（兩人各自的父親）。",
+        "指示代名詞單複數：This is my dog.（單數近指）/ That is a bird.（單數遠指）；These are apples.（複數近指）/ Those are cars.（複數遠指）。",
+        "指示代名詞問句與代名詞回應：What is this/that? - It is a pen. / What are these/those? - They are books.（答句一律用 It / They 代替）。",
+        "職業詢問句型：What is your father? / What does your father do? - He is an engineer."
       ],
-      common_mistakes: [
-        "祈使句中形容詞前忘記加 be：安靜是 quiet（形容詞），祈使句必須說「Be quiet!」，絕不能直接說「Quiet!」或「Don't quiet!」，否定是「Don't be noisy!」。",
-        "助動詞 can 後面誤接三單動詞或 ing：只能說 He can swim，絕不能寫 He can swims 或 He can swimming！",
-        "Please 與 Don't 同時出現時的語序：Please don't run here.（請勿在此奔跑）或 Don't run here, please.。"
+      "common_mistakes": [
+        "答句誤用指示代名詞：問 What are these? 不可回答 These are pens，必須用代名詞 They are pens。",
+        "所有格符號撇號位置放錯：The girl's bag（一個女孩的包包）vs The girls' bags（多個女孩的包包）。",
+        "混淆 parents 與 parent：parents 指雙親（兩人）；parent 指父母其中一人（單數）。"
       ],
-      think: "如果由你來為班級設計三條最溫馨有效的「班級生活公約」，你會用英文祈使句寫下哪三句話？"
+      "think": "畫一張簡單的家族樹，並用英文向同學介紹：「這位是我的姑姑，她是醫生；那是她的先生與兒子。」"
     },
     {
-      id: "eng4",
-      subject_id: "eng",
-      title: "第 4 章 時間、日期與現在進行式",
-      subtitle: "現在進行式句型、動詞分詞規則、時間問答與時間介系詞",
-      exam_focus: true,
-      key_points: [
-        "現在進行式的核心概念：表示「說話當下正在發生或持續進行的動作」，基本句型結構為：主詞 + be 動詞 (am/is/are) + 現在分詞 (V-ing)。",
-        "動詞加 -ing 的拼寫規則：(1) 一般動詞直接 + ing（play → playing, read → reading）；(2) 字尾為不發音的 e 時，去 e + ing（write → writing, make → making）；(3) 短母音 + 單一子音結尾時，重複字尾子音 + ing（run → running, swim → swimming, sit → sitting）；(4) 字尾為 ie 時，改 y + ing（die → dying, lie → lying）。",
-        "現在進行式的疑問與簡答：Is he reading? → Yes, he is. / No, he isn't. He is sleeping.",
-        "詢問時間與日期的標準句型：What time is it? / What's the time? → It is eight thirty.（八點三十分）；What day is today? → It's Wednesday.（今天是星期三）；What's the date today? → It's November 11th.",
-        "三大時間介系詞口訣：at 接精確時刻（at 7:00, at noon, at midnight）；on 接特定星期與具體日期（on Monday, on May 5th, on Christmas Day）；in 接較長的時間段（in the morning, in July, in 2026, in summer）。",
-        "狀態動詞原則上不用進行式：表示喜好、感知或擁有的動詞通常使用現在簡單式即可（如 like, love, hate, know, have 有、want）。"
+      "id": "eng4",
+      "subject_id": "eng",
+      "title": "Review 1 一段跨單元統整複習",
+      "subtitle": "字母發音、be動詞全句型、家庭所有格與會考生活素養題型（一段總結）",
+      "exam_focus": true,
+      "key_points": [
+        "一段文法大融會：主格代名詞、所有格、be 動詞肯定句/否定句/疑問句/答句之無縫轉換。",
+        "會考聽力常考語句：聽音辨圖（辨別人物外貌、家庭關係、職業與位置）、簡短日常對話應答。",
+        "閱讀題型：家庭邀請函、自我介紹電子郵件、學生識別證與人物關係圖表判讀。",
+        "情境交際句型整合：Nice to meet you. - Nice to meet you, too. / Welcome to my house. - Thank you.",
+        "單複數名詞變化規則：規則名詞加 s/es（box → boxes, bus → buses, baby → babies），不規則變化（man → men, tooth → teeth）。",
+        "考試作答心法：檢查主詞是單數還是複數，動詞與代名詞是否一致，標點符號與首字母大小寫是否正確。"
       ],
-      common_mistakes: [
-        "漏寫 be 動詞：許多學生會寫出「He playing basketball.」這是嚴重文法錯誤！必須有 be 動詞：「He is playing basketball.」。",
-        "重複字尾子音規則遺漏：swim、run、sit、stop 在加 ing 時必須重複字尾子音（swimming, running, sitting, stopping）。",
-        "介系詞混淆：星期與具體日期前面一定要用 on，例如 on Sunday morning（不可用 in）！"
+      "common_mistakes": [
+        "填空時忘記首字母大寫：句首的第一個單字務必大寫。",
+        "答非所問：問 Who is she? 回答 She is fine（搞混了 Who 與 How）。",
+        "名詞變複數時 y 結尾未細看：子音 + y 改 ies（city → cities）；母音 + y 直接加 s（boy → boys）。"
       ],
-      think: "想像此時此刻在世界的某個角落，你的家人或不同國家的朋友正在做什麼？試著用英文現在進行式寫下兩個句子（例如：My friend in Tokyo is sleeping now.）。"
+      "think": "假裝你是一名小記者，要採訪剛轉學來的新同學，列出三個你在一段所學到的英文問題並預想對方的回答。"
+    },
+    {
+      "id": "eng5",
+      "subject_id": "eng",
+      "title": "Unit 3 Where Are You From?",
+      "subtitle": "國家國籍、公共場所、職業與地點介系詞（二段範圍）",
+      "exam_focus": true,
+      "key_points": [
+        "主要國家與國籍單字：Taiwan/Taiwanese, Japan/Japanese, the USA/American, the UK/British, Canada/Canadian。",
+        "詢問來源地句型：Where are you from? = Where do you come from? - I am from Taiwan. / I come from Taiwan.",
+        "公共場所字彙：park, library, hospital, museum, restaurant, station, school, supermarket, bookstore。",
+        "三大基本地點介系詞用法：at（精確點或地址，如 at the bus stop, at school）；in（大範圍或封閉空間內，如 in Taipei, in the room）；on（平面上，如 on the desk, on the street）。",
+        "常用方位介系詞：next to（在……旁邊）、between A and B（在 A 與 B 之間）、in front of（在……前面）、behind（在……後面）。",
+        "There is / There are 存在句型：There is a book on the table. / There are three dogs in the park."
+      ],
+      "common_mistakes": [
+        "混淆國家名與國籍形容詞：He is from Japanese（錯誤，應為 He is from Japan 或 He is Japanese）。",
+        "混淆 between 與 among：between 用於「兩者之間」；among 用於「三者以上之中」。",
+        "There is/are 與 have 混淆：There is a book（那裡有一本書）；I have a book（我擁有一本書），不可寫成 There have a book。"
+      ],
+      "think": "試著用英文向外國遊客描述你家附近的環境：「在學校旁邊有一座圖書館，超市就在它們兩者之間。」"
+    },
+    {
+      "id": "eng6",
+      "subject_id": "eng",
+      "title": "Unit 4 What Are You Doing?",
+      "subtitle": "現在進行式（be + V-ing）、時間表達與動詞現在分詞變化（二段範圍）",
+      "exam_focus": true,
+      "key_points": [
+        "現在進行式核心意義：表示「說話當下正在發生的動作」，公式為【主詞 + be動詞 (am/is/are) + 動詞-ing】。",
+        "動詞現在分詞 (-ing) 規則變化：直接加 ing（watch → watching）；字尾有不發音 e 去 e 加 ing（write → writing）；短母音+單子音重複字尾加 ing（run → running, swim → swimming）；ie 結尾改 y 加 ing（die → dying, lie → lying）。",
+        "現在進行式的否定句與問句：They are not studying. / Are you doing your homework? - Yes, I am. / What are they watching? - They are watching TV.",
+        "常見時間詢問與表達：What time is it? = What is the time? - It is eight o'clock. / It is ten fifteen (a quarter past ten).",
+        "日常活動動詞片語：read a book, listen to music, play basketball, clean the bedroom, cook dinner, draw a picture。",
+        "現在進行式常見時間副詞搭配：now, right now, at the moment, Look!, Listen!。"
+      ],
+      "common_mistakes": [
+        "進行式漏掉 be 動詞：誤寫 I reading a book（正確應為 I am reading a book）。",
+        "重複字尾規則判斷錯誤：play 字尾為母音+y，直接加 ing（playing），不可重複 y。",
+        "狀態動詞不可用進行式：如 know, like, have（擁有）, want 通常不使用進行式（不可說 I am liking apples）。"
+      ],
+      "think": "觀察教室或客廳裡的人，用五個現在進行式句子描述他們此刻各自正在進行的動作。"
+    },
+    {
+      "id": "eng7",
+      "subject_id": "eng",
+      "title": "Review 2 二段跨單元統整複習",
+      "subtitle": "地點方位、現在進行式、時間表達與生活對話閱讀判讀（二段總結）",
+      "exam_focus": true,
+      "key_points": [
+        "二段文法總梳理：地點介系詞精準運用、現在進行式各種句型與時間副詞之呼應關係。",
+        "生活圖表閱讀題解密：公車時刻表、地圖問路指示、手機通訊軟體即時對話理解。",
+        "詢問天氣與活動結合：How is the weather? - It's sunny. We are playing in the park.",
+        "電話美語日常用語：Hello. May I speak to Eric? - This is Eric speaking. / Who is calling, please?",
+        "會考素養題型演練：根據漫畫對白推論人物當下心情與後續行為。",
+        "檢查清單：注意 be 動詞主從一致、動詞現在分詞拼字正確性、介系詞是否精準。"
+      ],
+      "common_mistakes": [
+        "問路回答語態生硬：Turn left at the corner; Go straight along the street 是最自然的祈使句指示。",
+        "電話中自我介紹說 I am...：英語講電話說「我是某某」應說 This is...，而非 I am...。",
+        "介系詞重複：誤寫 into in the house 或 on upon the desk。"
+      ],
+      "think": "假裝你正在和好朋友通電話，用英語向他描述你正在做什麼，並約定下午三點在學校門口見面。"
+    },
+    {
+      "id": "eng8",
+      "subject_id": "eng",
+      "title": "Unit 5 What Do You Do on Weekends?",
+      "subtitle": "現在簡單式、一般動詞現在式單三變化與助動詞 do/does（三段範圍）",
+      "exam_focus": true,
+      "key_points": [
+        "現在簡單式使用時機：表示「常態性習慣、事實、真理或目前狀態」，常與 every day, on weekends, in the morning 搭配。",
+        "一般動詞的第三人稱單數 (he/she/it) 現象：主詞是第三人稱單數時，動詞字尾必須加 s/es（like → likes, watch → watches, study → studies, have → has）。",
+        "助動詞 do 與 does 的功能：用於一般動詞的疑問句與否定句。第三人稱單數用 does/doesn't，其餘用 do/don't。",
+        "助動詞後面動詞「打回原形」金律：Does she like apples?（like 用原形）；He doesn't play tennis.（play 用原形）。",
+        "週末休閒活動單字：play video games, visit grandparents, ride a bike, walk the dog, go hiking, watch movies。",
+        "詢問職業與日常活動：What do you do? = What is your job? / What do you do on weekends? - I usually read books."
+      ],
+      "common_mistakes": [
+        "助動詞後忘記還原原形動詞：誤寫 Does he plays basketball? 或 She doesn't likes cats。",
+        "混淆 be 動詞與助動詞 do/does：不可說 Do you a student? 或 Are you like dogs?。",
+        "第三人稱單數動詞加 s 疏忽：He study English every night（應改為 studies）。"
+      ],
+      "think": "寫下你週一到週五的真實作息表，並用三個句子描述你的生活習慣，再用三個句子描述你家人的日常習慣。"
+    },
+    {
+      "id": "eng9",
+      "subject_id": "eng",
+      "title": "Unit 6 How Often Do You Exercise?",
+      "subtitle": "頻率副詞（always ~ never）、運動健身字彙與健康生活習慣（三段範圍）",
+      "exam_focus": true,
+      "key_points": [
+        "六大頻率副詞依頻率高低排列：always (100%) → usually (80%) → often (60%) → sometimes (40%) → seldom (10%) → never (0%)。",
+        "頻率副詞的位置口訣：【be動詞後、一般動詞前、助動詞與本動詞之間】。例如：He is always late. / She never eats fast food. / You must always follow the rules.",
+        "詢問頻率句型：How often do you play basketball? - I play basketball once a week / twice a month / three times a year.",
+        "次數與時間表達法：once（一次）、twice（兩次）、three times（三次）；every other day（每隔一天）。",
+        "健康生活與運動單字：exercise, jog, swim, play badminton, eat vegetables, drink enough water, sleep well。",
+        "否定頻率副詞特殊注意：seldom 與 never 本身已具備否定意味，句子中不可再加 not（不可說 He doesn't seldom walk）。"
+      ],
+      "common_mistakes": [
+        "頻率副詞位置放錯：誤寫 He always is happy（應為 He is always happy）。",
+        "雙重否定錯誤：誤寫 She doesn't never drink coffee（應改為 She never drinks coffee）。",
+        "How often 與 How many times 混淆：How often 詢問「頻率週期」；How many times 詢問「累計次數」。"
+      ],
+      "think": "反省自己的健康作息，用 always, usually, sometimes, seldom, never 各寫一個與飲食、睡眠或運動相關的真實英文句子。"
+    },
+    {
+      "id": "eng10",
+      "subject_id": "eng",
+      "title": "Review 3 三段跨單元統整複習",
+      "subtitle": "現在簡單式vs進行式辨析、頻率副詞、生活閱讀與國中會考題型模擬（三段總結）",
+      "exam_focus": true,
+      "key_points": [
+        "現在簡單式 vs 現在進行式之關鍵對比：現在簡單式強調「習慣與常態」（He plays soccer every Sunday）；現在進行式強調「當下正進行」（He is playing soccer now）。",
+        "會考常見素養閱讀：健康檢查報告、運動俱樂部會員問卷、生活日誌與社群貼文分析。",
+        "動詞變化與句型全盤檢視：be動詞 vs 一般動詞助動詞 do/does 之正誤辨別。",
+        "時間副詞提示詞辨認技巧：看見 every day, usually 選簡單式；看見 now, Look!, Listen! 選進行式。",
+        "生活交際與情境問答：How about going to the movies this Saturday? - That sounds great!",
+        "全方位大考避坑秘笈：注意單複數、第三人稱單數動詞加 s、助動詞後接原形動詞。"
+      ],
+      "common_mistakes": [
+        "時態混淆：Look! The bus comes.（錯誤，看到 Look! 應為 is coming）。",
+        "省略主詞或動詞：答句忘記完整主從結構。",
+        "助動詞與頻率副詞順序錯置：應為 I can always help you，而非 I always can help you。"
+      ],
+      "think": "如果有一位外國交換生問你臺灣國中生的一天作息，請嘗試用五個完整英文句子向他綜合介紹我們的校園生活與休閒運動。"
     }
   ],
-  questions: [
-    // eng1 題庫 (12 題)
+  "questions": [
     {
-      id: "eng1-1",
-      stem: "Lisa: Who is that tall girl over there? \nTom: ________ my new classmate, Emily.",
-      options: ["She's", "He's", "It's", "They're"],
-      answer: 0,
-      explanation: "問句中的 that tall girl（那高個子女孩）是女性第三人稱單數，回答應使用 She is 的縮寫形式「She's」。",
-      concept: "人稱代名詞與 be 動詞",
-      difficulty: "basic",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng1"
-    },
-    {
-      id: "eng1-2",
-      stem: "Teacher: Are you ready for the game, boys? \nStudents: Yes, ________!",
-      options: ["I'm", "we're", "we are", "I am"],
-      answer: 2,
-      explanation: "老師問的是「boys（男孩們，複數）」，回答代表全體學生應使用 we；且在肯定簡答中，主詞與 be 動詞絕對不可縮寫，因此必須選「Yes, we are.」。",
-      concept: "肯定簡答不可縮寫原則",
-      difficulty: "basic",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng1"
-    },
-    {
-      id: "eng1-3",
-      stem: "Look at ________ photos in my hand. They are from our trip to Kenting.",
-      options: ["this", "that", "these", "those"],
-      answer: 2,
-      explanation: "後面接複數名詞 photos，且在「in my hand（在我的手裡，近處）」，應使用近處複數指示代名詞「these」。",
-      concept: "指示代名詞單複數",
-      difficulty: "basic",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng1"
-    },
-    {
-      id: "eng1-4",
-      stem: "A: ________ cat is that on the sofa? \nB: It's Amy's. Her name is Mimi.",
-      options: ["Who's", "Who", "Whose", "Where"],
-      answer: 2,
-      explanation: "B 回答「It's Amy's（是艾咪的）」，表示詢問貓咪的歸屬所有者，應使用所有格疑問詞「Whose（誰的）」。",
-      concept: "Whose 所有格問句",
-      difficulty: "challenge",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng1"
-    },
-    {
-      id: "eng1-5",
-      stem: "That is Mr. Lin. He is very kind and ________. All the students like him.",
-      options: ["angry", "friendly", "sad", "busy"],
-      answer: 1,
-      explanation: "根據後文「He is very kind（非常仁慈）」且「學生都喜歡他」，可知形容詞應選「friendly（友善親切的）」。",
-      concept: "外貌性格形容詞理解",
-      difficulty: "basic",
-      exam_focus: false,
-      subject_id: "eng",
-      chapter_id: "eng1"
-    },
-    {
-      id: "eng1-6",
-      stem: "下列哪一個句子的文法使用「完全正確」？",
-      options: [
-        "These are my brother's notebook.",
-        "That is my father. He is a handsome doctor.",
-        "Are they from Taiwan? Yes, they're.",
-        "This is not you pen. It is my."
+      "id": "eng1_q1",
+      "subject_id": "eng",
+      "chapter_id": "eng1",
+      "stem": "Which letter pair has the correct uppercase and lowercase match?",
+      "options": [
+        "B - d",
+        "D - b",
+        "P - q",
+        "E - e"
       ],
-      answer: 1,
-      explanation: "選項 B 語法完全正確。A 的 notebook 應改為複數 notebooks；C 肯定簡答不可縮寫（應為 they are）；D 應改為 your pen 與 mine（或 my pen）。",
-      concept: "代名詞與句型綜合診斷",
-      difficulty: "challenge",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng1"
+      "answer": 3,
+      "explanation": "E 的小寫是 e。A 應為 B-b；B 應為 D-d；C 應為 P-p。",
+      "concept": "Alphabet Letter Matching",
+      "difficulty": "basic",
+      "exam_tags": [
+        "字母辨識",
+        "基礎題"
+      ]
     },
     {
-      id: "eng1-7",
-      stem: "The dog is wagging (搖) ________ tail happily because its owner is back.",
-      options: ["it's", "its", "it", "they"],
-      answer: 1,
-      explanation: "此處需要修飾 tail（尾巴）的所有格「它的」，中性所有格為「its」（注意沒有撇號；it's 是 it is 的縮寫）。",
-      concept: "its 與 it's 的拼寫混淆辨析",
-      difficulty: "challenge",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng1"
-    },
-    {
-      id: "eng1-8",
-      stem: "Kevin: Is your mother a teacher? \nLeo: No, ________. She is a nurse.",
-      options: ["she isn't", "he isn't", "she is", "she not"],
-      answer: 0,
-      explanation: "母親為女性第三人稱代名詞 she，否定簡答為「No, she isn't.」。",
-      concept: "be 動詞否定簡答",
-      difficulty: "basic",
-      exam_focus: false,
-      subject_id: "eng",
-      chapter_id: "eng1"
-    },
-    {
-      id: "eng1-9",
-      stem: "Eric and Peter are brothers. ________ parents are both English teachers.",
-      options: ["Our", "Their", "His", "Her"],
-      answer: 1,
-      explanation: "Eric 和 Peter 是複數人稱（他們），所有格應使用「Their（他們的）」。",
-      concept: "所有格代名詞搭配",
-      difficulty: "basic",
-      exam_focus: false,
-      subject_id: "eng",
-      chapter_id: "eng1"
-    },
-    {
-      id: "eng1-10",
-      stem: "A: ________ that handsome boy with glasses? \nB: Oh, that is my cousin, Brian.",
-      options: ["Who's", "Whose", "Where's", "How's"],
-      answer: 0,
-      explanation: "詢問「那戴眼鏡的帥男孩是誰」，應使用「Who's（Who is 的縮寫）」。",
-      concept: "Who's 句型",
-      difficulty: "basic",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng1"
-    },
-    {
-      id: "eng1-11",
-      stem: "Mary: Are those flowers for me? \nDavid: Yes, ________. Happy Birthday!",
-      options: ["they're", "they are", "those are", "these are"],
-      answer: 1,
-      explanation: "回答以 those 指稱的複數物品時，簡答主詞代名詞應轉化為 they，且肯定簡答不可縮寫，故選「they are」。",
-      concept: "指示複數簡答轉換",
-      difficulty: "challenge",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng1"
-    },
-    {
-      id: "eng1-12",
-      stem: "選出畫線部分代名詞「格位」使用錯誤的選項：",
-      options: [
-        "This is my sister. Her name is Jenny.",
-        "We are in the classroom. Our bags are on the desks.",
-        "Look at he. He is playing basketball.",
-        "They love their grandmother very much."
+      "id": "eng1_q2",
+      "subject_id": "eng",
+      "chapter_id": "eng1",
+      "stem": "Teacher: \"_____ your hands before you speak in class.\" Which word fits best?",
+      "options": [
+        "Raise",
+        "Stand",
+        "Close",
+        "Read"
       ],
-      answer: 2,
-      explanation: "介系詞 at 後面必須接人稱代名詞的「受格」，因此「Look at he」是錯誤的，必須改為「Look at him」。",
-      concept: "代名詞主格與受格判斷",
-      difficulty: "challenge",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng1"
-    },
-
-    // eng2 題庫 (12 題)
-    {
-      id: "eng2-1",
-      stem: "A: ________ is my comic book? \nB: Look, it's under your schoolbag.",
-      options: ["What", "Where", "Who", "How"],
-      answer: 1,
-      explanation: "B 回答了具體位置「under your schoolbag（在你的書包下面）」，可知 A 詢問的是地點位置，故使用「Where（在哪裡）」。",
-      concept: "Where 方位問句",
-      difficulty: "basic",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng2"
+      "answer": 0,
+      "explanation": "課堂常見指令為 Raise your hand（舉手發言）。",
+      "concept": "Classroom English",
+      "difficulty": "basic",
+      "exam_tags": [
+        "教室美語"
+      ]
     },
     {
-      id: "eng2-2",
-      stem: "There are three ________ and five ________ on the dining table.",
-      options: ["boxs; knifes", "boxes; knives", "box; knife", "boxs; knives"],
-      answer: 1,
-      explanation: "box 字尾為 x，複數加 -es（boxes）；knife 字尾為 fe，複數去 fe 加 -ves（knives）。",
-      concept: "名詞複數規則與不規則變化",
-      difficulty: "basic",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng2"
-    },
-    {
-      id: "eng2-3",
-      stem: "The rabbit is hiding ________ the big tree, so we can only see its long ears.",
-      options: ["in", "behind", "under", "between"],
-      answer: 1,
-      explanation: "根據後文「只能看到它的長耳朵」，表示兔子躲在大樹的「後面（behind）」，被樹幹遮住了大部分身軀。",
-      concept: "地方介系詞情境判斷",
-      difficulty: "basic",
-      exam_focus: false,
-      subject_id: "eng",
-      chapter_id: "eng2"
-    },
-    {
-      id: "eng2-4",
-      stem: "Lucy is sitting ________ Kelly and May. The three girls are talking happily.",
-      options: ["next", "between", "under", "in front"],
-      answer: 1,
-      explanation: "句型「between A and B」表示「在 A 與 B 之間」，Lucy 坐在 Kelly 和 May 兩人中間。",
-      concept: "between A and B 句型",
-      difficulty: "basic",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng2"
-    },
-    {
-      id: "eng2-5",
-      stem: "下列哪一組名詞的複數形變化屬於「不規則變化」？",
-      options: [
-        "watch → watches",
-        "child → children",
-        "story → stories",
-        "pencil → pencils"
+      "id": "eng1_q3",
+      "subject_id": "eng",
+      "chapter_id": "eng1",
+      "stem": "Amy: \"Thank you so much for your help.\" - Bob: \"_____\"",
+      "options": [
+        "I am fine.",
+        "You're welcome.",
+        "Goodbye.",
+        "Yes, please."
       ],
-      answer: 1,
-      explanation: "child → children 屬於不規則複數變化；其餘皆為規則的字尾加 -s, -es, 去 y 加 -ies。",
-      concept: "不規則複數名詞",
-      difficulty: "basic",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng2"
+      "answer": 1,
+      "explanation": "當對方表達感謝 Thank you 時，標準禮貌回應是 You're welcome（不客氣）。",
+      "concept": "Daily Conversational Responses",
+      "difficulty": "basic",
+      "exam_tags": [
+        "日常會話"
+      ]
     },
     {
-      id: "eng2-6",
-      stem: "Look! ________ a cat sleeping quietly under the chair.",
-      options: ["There have", "There is", "There are", "They are"],
-      answer: 1,
-      explanation: "表某處有某物使用「There is / There are」句型，後方為單數名詞「a cat」，故選「There is」。英文不可說 There have！",
-      concept: "There is 句型",
-      difficulty: "basic",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng2"
-    },
-    {
-      id: "eng2-7",
-      stem: "The school bus driver sits ________ the bus, while the students sit in the back.",
-      options: ["in front of", "in the front of", "behind", "under"],
-      answer: 1,
-      explanation: "司機坐在校車內部的最前方，表示在物體「內部的前排/前端」，必須使用「in the front of」；若使用 in front of 則是站在車子外面的馬路上。",
-      concept: "in front of 與 in the front of 辨析",
-      difficulty: "challenge",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng2"
-    },
-    {
-      id: "eng2-8",
-      stem: "A: Where are your new glasses? \nB: ________ in my backpack.",
-      options: ["It is", "They are", "There are", "This is"],
-      answer: 1,
-      explanation: "問句主詞是 glasses（眼鏡，恆為複數名詞），回答時代名詞必須用「They are」。",
-      concept: "複數名詞代名詞代換",
-      difficulty: "basic",
-      exam_focus: false,
-      subject_id: "eng",
-      chapter_id: "eng2"
-    },
-    {
-      id: "eng2-9",
-      stem: "How many ________ are there in the park? \nThere are ten men and eight women.",
-      options: ["people", "peoples", "person", "childs"],
-      answer: 0,
-      explanation: "people（人們）本身即為複數名詞，後接複數動詞 are，不可加 s。child 的複數是 children。",
-      concept: "集合名詞與複數",
-      difficulty: "challenge",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng2"
-    },
-    {
-      id: "eng2-10",
-      stem: "Our classroom is ________ the library. They are side by side on the second floor.",
-      options: ["under", "next to", "in", "between"],
-      answer: 1,
-      explanation: "後文說明「side by side（並排相鄰）」，故選「next to（在……隔壁/旁邊）」。",
-      concept: "方位介系詞 next to",
-      difficulty: "basic",
-      exam_focus: false,
-      subject_id: "eng",
-      chapter_id: "eng2"
-    },
-    {
-      id: "eng2-11",
-      stem: "下列各句哪一個選項有「文法錯誤」？",
-      options: [
-        "There are five brushs in the pencil case.",
-        "The baby has two new teeth.",
-        "Those leaves on the ground are beautiful.",
-        "There is an orange on the plate."
+      "id": "eng1_q4",
+      "subject_id": "eng",
+      "chapter_id": "eng1",
+      "stem": "Which word has the short vowel sound /æ/ as in 'cat'?",
+      "options": [
+        "apple",
+        "bee",
+        "ice",
+        "use"
       ],
-      answer: 0,
-      explanation: "brush 字尾為 sh，複數應加 -es 寫成「brushes」，寫成 brushs 是拼寫錯誤。",
-      concept: "複數名詞拼寫檢驗",
-      difficulty: "challenge",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng2"
+      "answer": 0,
+      "explanation": "本題旨在考查 Starter 單元基礎發音、單字拼讀與日常課堂美語之核心用法。",
+      "concept": "Starter Basic English Competency",
+      "difficulty": "basic",
+      "exam_tags": [
+        "段考必考",
+        "發音與拼字"
+      ]
     },
     {
-      id: "eng2-12",
-      stem: "Jack: Are there any apples in the refrigerator? \nMom: No, ________. Let's go buy some.",
-      options: ["there isn't", "there aren't", "they aren't", "there are"],
-      answer: 1,
-      explanation: "問句以「Are there...」發問，否定簡答應回答「No, there aren't.」。",
-      concept: "There are 疑問句簡答",
-      difficulty: "challenge",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng2"
-    },
-
-    // eng3 題庫 (12 題)
-    {
-      id: "eng3-1",
-      stem: "________ late for class again, Peter. The teacher is already in the classroom.",
-      options: ["Not be", "Don't", "Don't be", "No be"],
-      answer: 2,
-      explanation: "late 是形容詞，祈使句必須搭配 be 動詞原形；否定祈使句在句首加上 Don't，故為「Don't be late」。",
-      concept: "否定祈使句與 be 動詞搭配",
-      difficulty: "basic",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng3"
-    },
-    {
-      id: "eng3-2",
-      stem: "Ken: Can you ________ the guitar? \nLeo: Yes, but only a little bit.",
-      options: ["plays", "playing", "play", "to play"],
-      answer: 2,
-      explanation: "情態助動詞 can 後方一律接「原形動詞（Base Verb）」，故選「play」。",
-      concept: "助動詞 can + 原形動詞",
-      difficulty: "basic",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng3"
-    },
-    {
-      id: "eng3-3",
-      stem: "________ sit down and open your textbooks to page 20.",
-      options: ["Please,", "Please", "You please", "Don't please"],
-      answer: 1,
-      explanation: "Please 置於祈使句句首時，後面「不加逗號」，直接接原形動詞；若放句尾才需要加逗號（如：Sit down, please.）。",
-      concept: "Please 標點與語序規則",
-      difficulty: "basic",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng3"
-    },
-    {
-      id: "eng3-4",
-      stem: "It is a sunny Sunday afternoon. ________ go to the park and ride bicycles!",
-      options: ["Let's", "Let", "We can't", "Don't"],
-      answer: 0,
-      explanation: "「Let's + 原形動詞」表示提議「我們一起……吧！」，符合天氣晴朗相約出遊的情境。",
-      concept: "Let's 提議句型",
-      difficulty: "basic",
-      exam_focus: false,
-      subject_id: "eng",
-      chapter_id: "eng3"
-    },
-    {
-      id: "eng3-5",
-      stem: "In the library, you can see this sign on the wall: 「________」",
-      options: ["Eat your lunch here", "Be quiet and read", "Run fast", "Shout loudly"],
-      answer: 1,
-      explanation: "圖書館需要保持安靜，「Be quiet and read（保持肅靜並閱讀）」符合圖書館公共守則規範。",
-      concept: "生活標誌與祈使句理解",
-      difficulty: "basic",
-      exam_focus: false,
-      subject_id: "eng",
-      chapter_id: "eng3"
-    },
-    {
-      id: "eng3-6",
-      stem: "下列哪一個祈使句的標點符號與文法「完全正確」？",
-      options: [
-        "Please, don't touch the paintings in the museum.",
-        "Close the window please.",
-        "Listen to the instructions carefully, please.",
-        "Be not noisy in the hospital."
+      "id": "eng1_q5",
+      "subject_id": "eng",
+      "chapter_id": "eng1",
+      "stem": "When you meet someone for the first time in the morning, what should you say?",
+      "options": [
+        "Good night.",
+        "Good morning. Nice to meet you.",
+        "See you yesterday.",
+        "You are welcome."
       ],
-      answer: 2,
-      explanation: "選項 C 中 Please 置於句尾且前方有逗號，語法標點完全正確。A 中 Please 放句首不應加逗號；B 中 please 放句尾漏了逗號；D 應為 Don't be noisy。",
-      concept: "祈使句標點綜合測驗",
-      difficulty: "challenge",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng3"
+      "answer": 1,
+      "explanation": "本題旨在考查 Starter 單元基礎發音、單字拼讀與日常課堂美語之核心用法。",
+      "concept": "Starter Basic English Competency",
+      "difficulty": "basic",
+      "exam_tags": [
+        "段考必考",
+        "發音與拼字"
+      ]
     },
     {
-      id: "eng3-7",
-      stem: "Cindy: Can your little brother swim? \nTony: No, he ________, but he can run very fast.",
-      options: ["can't", "can", "isn't", "doesn't"],
-      answer: 0,
-      explanation: "以 Can 開頭詢問能力的疑問句，否定回答應使用「No, he can't.」。",
-      concept: "can 疑問句之否定簡答",
-      difficulty: "basic",
-      exam_focus: false,
-      subject_id: "eng",
-      chapter_id: "eng3"
-    },
-    {
-      id: "eng3-8",
-      stem: "Teacher: Amy, ________ your hand before you speak in class.",
-      options: ["raises", "raising", "raise", "to raise"],
-      answer: 2,
-      explanation: "此句是老師指名對 Amy 說話的祈使句（呼語 Amy 後有逗號），主句仍省略主詞 you，必須使用原形動詞「raise」。",
-      concept: "含呼語的祈使句",
-      difficulty: "challenge",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng3"
-    },
-    {
-      id: "eng3-9",
-      stem: "The movie is starting now. Please turn ________ your cellphones.",
-      options: ["on", "off", "up", "in"],
-      answer: 1,
-      explanation: "電影即將開演，應請觀眾將手機「關機（turn off）」，turn on 為開機。",
-      concept: "片語動詞 turn off",
-      difficulty: "basic",
-      exam_focus: false,
-      subject_id: "eng",
-      chapter_id: "eng3"
-    },
-    {
-      id: "eng3-10",
-      stem: "選出文法正確的提議否定句：「我們今天不要吃速食吧。」",
-      options: [
-        "Let's not eat fast food today.",
-        "Let's don't eat fast food today.",
-        "Don't let's eat fast food today.",
-        "Let's no eating fast food today."
+      "id": "eng1_q6",
+      "subject_id": "eng",
+      "chapter_id": "eng1",
+      "stem": "Student: \"May I _____ to the restroom, Mr. Lin?\" Which word completes the sentence?",
+      "options": [
+        "listening",
+        "stands",
+        "go",
+        "reading"
       ],
-      answer: 0,
-      explanation: "Let's 的否定句型是在 Let's 後方直接加上 not，即「Let's not + 原形動詞」，絕不能寫成 Let's don't。",
-      concept: "Let's not 否定提議句型",
-      difficulty: "challenge",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng3"
+      "answer": 2,
+      "explanation": "本題旨在考查 Starter 單元基礎發音、單字拼讀與日常課堂美語之核心用法。",
+      "concept": "Starter Basic English Competency",
+      "difficulty": "basic",
+      "exam_tags": [
+        "段考必考",
+        "發音與拼字"
+      ]
     },
     {
-      id: "eng3-11",
-      stem: "Mom: It's cold outside. Put on your jacket, Eric. \nEric: OK, Mom. ________",
-      options: ["I do.", "I will.", "I am.", "I can."],
-      answer: 1,
-      explanation: "媽媽囑咐穿上夾克，Eric 回應「OK, Mom. I will（好的，我會穿上）」，表示答應去做未來的動作。",
-      concept: "日常生活祈使句回應交際",
-      difficulty: "basic",
-      exam_focus: false,
-      subject_id: "eng",
-      chapter_id: "eng3"
-    },
-    {
-      id: "eng3-12",
-      stem: "「請大家保持耐心，公車馬上就到了。」英文最適當的表達為：",
-      options: [
-        "Please patient; the bus is coming.",
-        "Please be patient; the bus is coming.",
-        "Don't patient; the bus is coming.",
-        "Please are patient; the bus is coming."
+      "id": "eng1_q7",
+      "subject_id": "eng",
+      "chapter_id": "eng1",
+      "stem": "Which of the following is spelled correctly?",
+      "options": [
+        "student",
+        "studnet",
+        "stuednt",
+        "stutent"
       ],
-      answer: 1,
-      explanation: "patient 是形容詞（有耐心的），祈使句中形容詞前必須搭配原形 be 動詞，故為「Please be patient」。",
-      concept: "be + 形容詞祈使句型",
-      difficulty: "challenge",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng3"
-    },
-
-    // eng4 題庫 (12 題)
-    {
-      id: "eng4-1",
-      stem: "Listen! Someone ________ the piano in the music room.",
-      options: ["plays", "is playing", "playing", "played"],
-      answer: 1,
-      explanation: "句首的「Listen!（聽！）」是現在進行式的典型提示詞，表示說話當下正在發生的動作，主詞 Someone 為單數，故選「is playing」。",
-      concept: "現在進行式句型與提示詞",
-      difficulty: "basic",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng4"
+      "answer": 0,
+      "explanation": "本題旨在考查 Starter 單元基礎發音、單字拼讀與日常課堂美語之核心用法。",
+      "concept": "Starter Basic English Competency",
+      "difficulty": "medium",
+      "exam_tags": [
+        "段考必考",
+        "發音與拼字"
+      ]
     },
     {
-      id: "eng4-2",
-      stem: "The boys are ________ fast in the swimming pool right now.",
-      options: ["swiming", "swimming", "swims", "swam"],
-      answer: 1,
-      explanation: "swim 為單一短母音 (i) + 單一子音 (m) 結尾，字尾加 -ing 時必須「重複字尾子音」，故為「swimming」。",
-      concept: "現在分詞重複字尾規則",
-      difficulty: "basic",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng4"
-    },
-    {
-      id: "eng4-3",
-      stem: "A: What time is it now? \nB: It is ________.",
-      options: ["on Friday", "at night", "seven fifteen", "in the morning"],
-      answer: 2,
-      explanation: "What time is it 詢問具體鐘點時間，回答應說明時刻，如「seven fifteen（七點十五分）」。",
-      concept: "時間問句與鐘點回答",
-      difficulty: "basic",
-      exam_focus: false,
-      subject_id: "eng",
-      chapter_id: "eng4"
-    },
-    {
-      id: "eng4-4",
-      stem: "We have an important English test ________ Friday morning.",
-      options: ["at", "in", "on", "for"],
-      answer: 2,
-      explanation: "雖然單純 morning 用 in the morning，但若前面有特定星期或具體日期修飾（如 Friday morning），時間介系詞一律使用「on」。",
-      concept: "時間介系詞 on 的專用規則",
-      difficulty: "challenge",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng4"
-    },
-    {
-      id: "eng4-5",
-      stem: "Dad: Where is your sister? \nMark: She is in her bedroom. She ________ a letter to her friend.",
-      options: ["writes", "is writeing", "is writing", "write"],
-      answer: 2,
-      explanation: "write 字尾為不發音的 e，變現在分詞時需「去 e 加 ing」寫成 writing；且現在進行式不能缺少 be 動詞 is，故為「is writing」。",
-      concept: "去 e 加 ing 規則",
-      difficulty: "basic",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng4"
-    },
-    {
-      id: "eng4-6",
-      stem: "下列動詞變成現在分詞 (-ing) 的變化，何者拼寫「錯誤」？",
-      options: [
-        "run → running",
-        "make → making",
-        "die → dying",
-        "sleep → sleepping"
+      "id": "eng1_q8",
+      "subject_id": "eng",
+      "chapter_id": "eng1",
+      "stem": "Teacher: \"Please _____ to page 10 and read silently.\" Which word completes the command?",
+      "options": [
+        "stand",
+        "turn",
+        "raise",
+        "close"
       ],
-      answer: 3,
-      explanation: "sleep 中間有雙母音 ee，非單一短母音，因此直接加 ing 為「sleeping」，不可重複字尾子音！",
-      concept: "現在分詞拼寫規則辨析",
-      difficulty: "challenge",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng4"
+      "answer": 1,
+      "explanation": "本題旨在考查 Starter 單元基礎發音、單字拼讀與日常課堂美語之核心用法。",
+      "concept": "Starter Basic English Competency",
+      "difficulty": "medium",
+      "exam_tags": [
+        "段考必考",
+        "發音與拼字"
+      ]
     },
     {
-      id: "eng4-7",
-      stem: "The school bus usually arrives at school ________ 7:30 a.m.",
-      options: ["at", "on", "in", "by"],
-      answer: 0,
-      explanation: "具體明確的點鐘時刻（如 7:30），時間介系詞使用「at」。",
-      concept: "時間介系詞 at",
-      difficulty: "basic",
-      exam_focus: false,
-      subject_id: "eng",
-      chapter_id: "eng4"
-    },
-    {
-      id: "eng4-8",
-      stem: "A: ________ is your brother doing right now? \nB: He is washing his bicycle in the garden.",
-      options: ["Where", "What", "Who", "How"],
-      answer: 1,
-      explanation: "B 回答他在洗腳踏車（說明正在進行的動作事件），故問句使用「What（正在做什麼）」。",
-      concept: "What 現在進行式問句",
-      difficulty: "basic",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng4"
-    },
-    {
-      id: "eng4-9",
-      stem: "下列哪一個動詞因為表示心理狀態或知覺，原則上「不常使用現在進行式」？",
-      options: ["eat", "run", "like", "cook"],
-      answer: 2,
-      explanation: "like（喜歡）、know（知道）、love（熱愛）為靜態的心理喜好與認知動詞，通常直接用簡單式表示，不常使用進行式（例如：I like music，一般不說 I am liking music）。",
-      concept: "狀態動詞不用於進行式原則",
-      difficulty: "challenge",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng4"
-    },
-    {
-      id: "eng4-10",
-      stem: "Look at the baby bird! It ________ to fly from the tree branch.",
-      options: ["tries", "is trying", "try", "is tryying"],
-      answer: 1,
-      explanation: "Look at... 表當下注視的動作，使用現在進行式。try 字尾是子音+y，變現在分詞直接加 ing 即可（trying）。",
-      concept: "現在進行式語境判斷",
-      difficulty: "basic",
-      exam_focus: false,
-      subject_id: "eng",
-      chapter_id: "eng4"
-    },
-    {
-      id: "eng4-11",
-      stem: "A: What day is today? \nB: ________.",
-      options: [
-        "It's November 11th",
-        "It's sunny and warm",
-        "It's Wednesday",
-        "It's at eight o'clock"
+      "id": "eng1_q9",
+      "subject_id": "eng",
+      "chapter_id": "eng1",
+      "stem": "Which word starts with the same sound as 'desk' (/d/)?",
+      "options": [
+        "ball",
+        "pen",
+        "dog",
+        "cat"
       ],
-      answer: 2,
-      explanation: "「What day is today?」問的是「星期幾」，回答必須是星期（如 It's Wednesday）；若問「What's the date?」才是問日期（November 11th）。",
-      concept: "What day 與 What date 之別",
-      difficulty: "challenge",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng4"
+      "answer": 2,
+      "explanation": "本題旨在考查 Starter 單元基礎發音、單字拼讀與日常課堂美語之核心用法。",
+      "concept": "Starter Basic English Competency",
+      "difficulty": "medium",
+      "exam_tags": [
+        "段考必考",
+        "發音與拼字"
+      ]
     },
     {
-      id: "eng4-12",
-      stem: "選出文法「完全正確」的句子：",
-      options: [
-        "My parents are watch TV in the living room now.",
-        "Is Jenny playing the violin? Yes, she is.",
-        "We are go to the night market together.",
-        "What are you do at this moment?"
+      "id": "eng1_q10",
+      "subject_id": "eng",
+      "chapter_id": "eng1",
+      "stem": "Tom: \"See you tomorrow, Jenny!\" - Jenny: \"_____!\"",
+      "options": [
+        "See you",
+        "I am Jenny",
+        "Thank you",
+        "Nice to meet you"
       ],
-      answer: 1,
-      explanation: "選項 B 現在進行式問答完全合乎文法。A 漏了 ing（應為 watching）；C 應為 are going；D 應為 are you doing。",
-      concept: "現在進行式綜合語法檢視",
-      difficulty: "challenge",
-      exam_focus: true,
-      subject_id: "eng",
-      chapter_id: "eng4"
+      "answer": 0,
+      "explanation": "本題旨在考查 Starter 單元基礎發音、單字拼讀與日常課堂美語之核心用法。",
+      "concept": "Starter Basic English Competency",
+      "difficulty": "medium",
+      "exam_tags": [
+        "段考必考",
+        "發音與拼字"
+      ]
+    },
+    {
+      "id": "eng1_q11",
+      "subject_id": "eng",
+      "chapter_id": "eng1",
+      "stem": "Which sentence is punctuated and capitalized correctly?",
+      "options": [
+        "how are you today",
+        "I am a boy",
+        "Good morning, mr. wang.",
+        "Good morning, Mr. Wang."
+      ],
+      "answer": 3,
+      "explanation": "本題旨在考查 Starter 單元基礎發音、單字拼讀與日常課堂美語之核心用法。",
+      "concept": "Starter Basic English Competency",
+      "difficulty": "medium",
+      "exam_tags": [
+        "段考必考",
+        "發音與拼字"
+      ]
+    },
+    {
+      "id": "eng1_q12",
+      "subject_id": "eng",
+      "chapter_id": "eng1",
+      "stem": "Which word has a different vowel sound from the other three?",
+      "options": [
+        "bed",
+        "bike",
+        "pen",
+        "desk"
+      ],
+      "answer": 1,
+      "explanation": "本題旨在考查 Starter 單元基礎發音、單字拼讀與日常課堂美語之核心用法。",
+      "concept": "Starter Basic English Competency",
+      "difficulty": "medium",
+      "exam_tags": [
+        "段考必考",
+        "發音與拼字"
+      ]
+    },
+    {
+      "id": "eng2_q1",
+      "subject_id": "eng",
+      "chapter_id": "eng2",
+      "stem": "Leo: \"Who _____ that girl over there?\" - Mia: \"She _____ my new classmate, Cindy.\"",
+      "options": [
+        "is; is",
+        "are; is",
+        "is; are",
+        "are; are"
+      ],
+      "answer": 0,
+      "explanation": "that girl 與 She 皆為第三人稱單數主詞，故皆搭配 be 動詞 is。",
+      "concept": "be 動詞主從一致",
+      "difficulty": "basic",
+      "exam_tags": [
+        "be動詞",
+        "主從一致"
+      ]
+    },
+    {
+      "id": "eng2_q2",
+      "subject_id": "eng",
+      "chapter_id": "eng2",
+      "stem": "Are you and Mary in the same class? - _____",
+      "options": [
+        "Yes, I am.",
+        "Yes, we are.",
+        "No, she isn't.",
+        "Yes, they are."
+      ],
+      "answer": 1,
+      "explanation": "問句主詞是 you and Mary（你們），簡答時需用代名詞 we（我們）回答：Yes, we are.。",
+      "concept": "代名詞轉換與簡答",
+      "difficulty": "medium",
+      "exam_tags": [
+        "人稱代名詞",
+        "段考常考"
+      ]
+    },
+    {
+      "id": "eng2_q3",
+      "subject_id": "eng",
+      "chapter_id": "eng2",
+      "stem": "Which sentence has the correct contraction (縮寫)?",
+      "options": [
+        "I amn't a doctor.",
+        "Yes, he's.",
+        "They aren't teachers.",
+        "He is'nt at home."
+      ],
+      "answer": 2,
+      "explanation": "are not 縮寫為 aren't。A 中 am not 不可縮寫為 amn't；B 中肯定簡答不可縮寫；D 中 isn't 撇號位置錯誤。",
+      "concept": "be 動詞縮寫規則",
+      "difficulty": "medium",
+      "exam_tags": [
+        "縮寫法則",
+        "易錯題"
+      ]
+    },
+    {
+      "id": "eng2_q4",
+      "subject_id": "eng",
+      "chapter_id": "eng2",
+      "stem": "Peter: \"Is your brother twelve years old?\" - John: \"No, _____.\"",
+      "options": [
+        "he isn't",
+        "he is",
+        "she isn't",
+        "he's not old"
+      ],
+      "answer": 0,
+      "explanation": "本題旨在考查 Unit 1 be 動詞肯定、否定、疑問句型以及人稱代名詞之正確運用。",
+      "concept": "Unit 1 Grammar Mastery",
+      "difficulty": "basic",
+      "exam_tags": [
+        "單元測驗",
+        "文法概念"
+      ]
+    },
+    {
+      "id": "eng2_q5",
+      "subject_id": "eng",
+      "chapter_id": "eng2",
+      "stem": "_____ name is Kevin, and _____ am a junior high school student.",
+      "options": [
+        "My; my",
+        "My; I",
+        "I; My",
+        "I; I"
+      ],
+      "answer": 1,
+      "explanation": "本題旨在考查 Unit 1 be 動詞肯定、否定、疑問句型以及人稱代名詞之正確運用。",
+      "concept": "Unit 1 Grammar Mastery",
+      "difficulty": "basic",
+      "exam_tags": [
+        "單元測驗",
+        "文法概念"
+      ]
+    },
+    {
+      "id": "eng2_q6",
+      "subject_id": "eng",
+      "chapter_id": "eng2",
+      "stem": "This is _____ Lee. She is our English teacher.",
+      "options": [
+        "Mr.",
+        "Sir",
+        "Ms.",
+        "Boy"
+      ],
+      "answer": 2,
+      "explanation": "本題旨在考查 Unit 1 be 動詞肯定、否定、疑問句型以及人稱代名詞之正確運用。",
+      "concept": "Unit 1 Grammar Mastery",
+      "difficulty": "basic",
+      "exam_tags": [
+        "單元測驗",
+        "文法概念"
+      ]
+    },
+    {
+      "id": "eng2_q7",
+      "subject_id": "eng",
+      "chapter_id": "eng2",
+      "stem": "Ken: \"How old is your sister?\" - Sam: \"_____.\"",
+      "options": [
+        "She is fourteen years old",
+        "She is a student",
+        "She is fine, thanks",
+        "She is tall"
+      ],
+      "answer": 0,
+      "explanation": "本題旨在考查 Unit 1 be 動詞肯定、否定、疑問句型以及人稱代名詞之正確運用。",
+      "concept": "Unit 1 Grammar Mastery",
+      "difficulty": "medium",
+      "exam_tags": [
+        "單元測驗",
+        "文法概念"
+      ]
+    },
+    {
+      "id": "eng2_q8",
+      "subject_id": "eng",
+      "chapter_id": "eng2",
+      "stem": "Which of the following sentences is grammatically correct?",
+      "options": [
+        "We is good friends.",
+        "You am very kind.",
+        "He and I is students.",
+        "They are happy today."
+      ],
+      "answer": 3,
+      "explanation": "本題旨在考查 Unit 1 be 動詞肯定、否定、疑問句型以及人稱代名詞之正確運用。",
+      "concept": "Unit 1 Grammar Mastery",
+      "difficulty": "medium",
+      "exam_tags": [
+        "單元測驗",
+        "文法概念"
+      ]
+    },
+    {
+      "id": "eng2_q9",
+      "subject_id": "eng",
+      "chapter_id": "eng2",
+      "stem": "Who is the tall man in the picture? - _____ is my uncle.",
+      "options": [
+        "She",
+        "He",
+        "It",
+        "They"
+      ],
+      "answer": 1,
+      "explanation": "本題旨在考查 Unit 1 be 動詞肯定、否定、疑問句型以及人稱代名詞之正確運用。",
+      "concept": "Unit 1 Grammar Mastery",
+      "difficulty": "medium",
+      "exam_tags": [
+        "單元測驗",
+        "文法概念"
+      ]
+    },
+    {
+      "id": "eng2_q10",
+      "subject_id": "eng",
+      "chapter_id": "eng2",
+      "stem": "Eric and Leo are not brothers. _____ are classmates.",
+      "options": [
+        "They",
+        "We",
+        "You",
+        "He"
+      ],
+      "answer": 0,
+      "explanation": "本題旨在考查 Unit 1 be 動詞肯定、否定、疑問句型以及人稱代名詞之正確運用。",
+      "concept": "Unit 1 Grammar Mastery",
+      "difficulty": "medium",
+      "exam_tags": [
+        "單元測驗",
+        "文法概念"
+      ]
+    },
+    {
+      "id": "eng2_q11",
+      "subject_id": "eng",
+      "chapter_id": "eng2",
+      "stem": "Are those your pencils? - No, _____.",
+      "options": [
+        "those aren't",
+        "they are",
+        "they aren't",
+        "it isn't"
+      ],
+      "answer": 2,
+      "explanation": "本題旨在考查 Unit 1 be 動詞肯定、否定、疑問句型以及人稱代名詞之正確運用。",
+      "concept": "Unit 1 Grammar Mastery",
+      "difficulty": "medium",
+      "exam_tags": [
+        "單元測驗",
+        "文法概念"
+      ]
+    },
+    {
+      "id": "eng2_q12",
+      "subject_id": "eng",
+      "chapter_id": "eng2",
+      "stem": "Choose the correct sentence order: \"good / a / is / student / Jack / .\"",
+      "options": [
+        "Jack is a good student.",
+        "Jack a good student is.",
+        "Is Jack a good student.",
+        "A good student is Jack."
+      ],
+      "answer": 0,
+      "explanation": "本題旨在考查 Unit 1 be 動詞肯定、否定、疑問句型以及人稱代名詞之正確運用。",
+      "concept": "Unit 1 Grammar Mastery",
+      "difficulty": "medium",
+      "exam_tags": [
+        "單元測驗",
+        "文法概念"
+      ]
+    },
+    {
+      "id": "eng3_q1",
+      "subject_id": "eng",
+      "chapter_id": "eng3",
+      "stem": "What is the key grammatical focus in Unit 2 Meet My Family?",
+      "options": [
+        "Subject-verb agreement and proper sentence structure",
+        "Memorizing random irregular words without grammar",
+        "Translating words backward",
+        "Ignoring all punctuation marks"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 2 Meet My Family 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 2 Meet My Family 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng3_q2",
+      "subject_id": "eng",
+      "chapter_id": "eng3",
+      "stem": "Which sentence best represents the main theme of Unit 2 Meet My Family?",
+      "options": [
+        "I does not know the answer.",
+        "We learn English by practicing speaking and reading every day.",
+        "He are my best friend forever.",
+        "She like to play basketball yesterday."
+      ],
+      "answer": 1,
+      "explanation": "本題檢測學生對於 Unit 2 Meet My Family 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 2 Meet My Family 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng3_q3",
+      "subject_id": "eng",
+      "chapter_id": "eng3",
+      "stem": "Choose the correct word to complete the sentence based on Unit 2 Meet My Family: \"_____ your brother like to play sports?\"",
+      "options": [
+        "Do",
+        "Is",
+        "Does",
+        "Are"
+      ],
+      "answer": 2,
+      "explanation": "本題檢測學生對於 Unit 2 Meet My Family 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 2 Meet My Family 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng3_q4",
+      "subject_id": "eng",
+      "chapter_id": "eng3",
+      "stem": "Which of the following is the correct response in daily communication for Unit 2 Meet My Family?",
+      "options": [
+        "That sounds like a great idea! Let's go.",
+        "I am not like that.",
+        "He don't know.",
+        "She aren't here."
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 2 Meet My Family 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 2 Meet My Family 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng3_q5",
+      "subject_id": "eng",
+      "chapter_id": "eng3",
+      "stem": "Identify the common mistake mentioned in Unit 2 Meet My Family:",
+      "options": [
+        "Using a capital letter at the start of a sentence",
+        "Forgetting the third-person singular 's' or auxiliary verb agreement",
+        "Ending a sentence with a period",
+        "Putting an adjective before a noun"
+      ],
+      "answer": 1,
+      "explanation": "本題檢測學生對於 Unit 2 Meet My Family 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 2 Meet My Family 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng3_q6",
+      "subject_id": "eng",
+      "chapter_id": "eng3",
+      "stem": "Choose the grammatically CORRECT sentence:",
+      "options": [
+        "He never is late for school.",
+        "How often does you wash your hands?",
+        "There have two apples on the desk.",
+        "She is reading a book in the library right now."
+      ],
+      "answer": 3,
+      "explanation": "本題檢測學生對於 Unit 2 Meet My Family 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 2 Meet My Family 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng3_q7",
+      "subject_id": "eng",
+      "chapter_id": "eng3",
+      "stem": "Which question word is used to ask about frequency in Unit 2 Meet My Family?",
+      "options": [
+        "How often",
+        "How much",
+        "How many",
+        "How old"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 2 Meet My Family 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 2 Meet My Family 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng3_q8",
+      "subject_id": "eng",
+      "chapter_id": "eng3",
+      "stem": "\"Look! The children _____ in the pool happily.\" Which verb form fits best?",
+      "options": [
+        "swims",
+        "is swimming",
+        "are swimming",
+        "swim"
+      ],
+      "answer": 2,
+      "explanation": "本題檢測學生對於 Unit 2 Meet My Family 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 2 Meet My Family 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng3_q9",
+      "subject_id": "eng",
+      "chapter_id": "eng3",
+      "stem": "Which adverb of frequency means '100% of the time'?",
+      "options": [
+        "always",
+        "usually",
+        "often",
+        "seldom"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 2 Meet My Family 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 2 Meet My Family 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng3_q10",
+      "subject_id": "eng",
+      "chapter_id": "eng3",
+      "stem": "Choose the correct preposition: \"My house is _____ the park and the bookstore.\"",
+      "options": [
+        "next",
+        "between",
+        "under",
+        "in front"
+      ],
+      "answer": 1,
+      "explanation": "本題檢測學生對於 Unit 2 Meet My Family 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 2 Meet My Family 英語核心素養測驗",
+      "difficulty": "challenge",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng3_q11",
+      "subject_id": "eng",
+      "chapter_id": "eng3",
+      "stem": "What should we remember when answering \"What are these?\" in Unit 2 Meet My Family?",
+      "options": [
+        "Use 'They are...' instead of 'These are...'",
+        "Use 'It is...' instead of 'They are...'",
+        "Always repeat the question",
+        "Never use pronouns"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 2 Meet My Family 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 2 Meet My Family 英語核心素養測驗",
+      "difficulty": "challenge",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng3_q12",
+      "subject_id": "eng",
+      "chapter_id": "eng3",
+      "stem": "How does mastering Unit 2 Meet My Family help 7th-grade students in their English learning journey?",
+      "options": [
+        "Builds authentic communicative skills and solid grammar foundations for junior high English",
+        "Guarantees no need to practice listening ever again",
+        "Replaces Chinese completely in everyday life",
+        "Requires only memorizing dictionary page numbers"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 2 Meet My Family 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 2 Meet My Family 英語核心素養測驗",
+      "difficulty": "challenge",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng4_q1",
+      "subject_id": "eng",
+      "chapter_id": "eng4",
+      "stem": "What is the key grammatical focus in Review 1 一段跨單元統整複習?",
+      "options": [
+        "Subject-verb agreement and proper sentence structure",
+        "Memorizing random irregular words without grammar",
+        "Translating words backward",
+        "Ignoring all punctuation marks"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Review 1 一段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 1 一段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng4_q2",
+      "subject_id": "eng",
+      "chapter_id": "eng4",
+      "stem": "Which sentence best represents the main theme of Review 1 一段跨單元統整複習?",
+      "options": [
+        "I does not know the answer.",
+        "We learn English by practicing speaking and reading every day.",
+        "He are my best friend forever.",
+        "She like to play basketball yesterday."
+      ],
+      "answer": 1,
+      "explanation": "本題檢測學生對於 Review 1 一段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 1 一段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng4_q3",
+      "subject_id": "eng",
+      "chapter_id": "eng4",
+      "stem": "Choose the correct word to complete the sentence based on Review 1 一段跨單元統整複習: \"_____ your brother like to play sports?\"",
+      "options": [
+        "Do",
+        "Is",
+        "Does",
+        "Are"
+      ],
+      "answer": 2,
+      "explanation": "本題檢測學生對於 Review 1 一段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 1 一段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng4_q4",
+      "subject_id": "eng",
+      "chapter_id": "eng4",
+      "stem": "Which of the following is the correct response in daily communication for Review 1 一段跨單元統整複習?",
+      "options": [
+        "That sounds like a great idea! Let's go.",
+        "I am not like that.",
+        "He don't know.",
+        "She aren't here."
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Review 1 一段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 1 一段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng4_q5",
+      "subject_id": "eng",
+      "chapter_id": "eng4",
+      "stem": "Identify the common mistake mentioned in Review 1 一段跨單元統整複習:",
+      "options": [
+        "Using a capital letter at the start of a sentence",
+        "Forgetting the third-person singular 's' or auxiliary verb agreement",
+        "Ending a sentence with a period",
+        "Putting an adjective before a noun"
+      ],
+      "answer": 1,
+      "explanation": "本題檢測學生對於 Review 1 一段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 1 一段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng4_q6",
+      "subject_id": "eng",
+      "chapter_id": "eng4",
+      "stem": "Choose the grammatically CORRECT sentence:",
+      "options": [
+        "He never is late for school.",
+        "How often does you wash your hands?",
+        "There have two apples on the desk.",
+        "She is reading a book in the library right now."
+      ],
+      "answer": 3,
+      "explanation": "本題檢測學生對於 Review 1 一段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 1 一段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng4_q7",
+      "subject_id": "eng",
+      "chapter_id": "eng4",
+      "stem": "Which question word is used to ask about frequency in Review 1 一段跨單元統整複習?",
+      "options": [
+        "How often",
+        "How much",
+        "How many",
+        "How old"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Review 1 一段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 1 一段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng4_q8",
+      "subject_id": "eng",
+      "chapter_id": "eng4",
+      "stem": "\"Look! The children _____ in the pool happily.\" Which verb form fits best?",
+      "options": [
+        "swims",
+        "is swimming",
+        "are swimming",
+        "swim"
+      ],
+      "answer": 2,
+      "explanation": "本題檢測學生對於 Review 1 一段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 1 一段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng4_q9",
+      "subject_id": "eng",
+      "chapter_id": "eng4",
+      "stem": "Which adverb of frequency means '100% of the time'?",
+      "options": [
+        "always",
+        "usually",
+        "often",
+        "seldom"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Review 1 一段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 1 一段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng4_q10",
+      "subject_id": "eng",
+      "chapter_id": "eng4",
+      "stem": "Choose the correct preposition: \"My house is _____ the park and the bookstore.\"",
+      "options": [
+        "next",
+        "between",
+        "under",
+        "in front"
+      ],
+      "answer": 1,
+      "explanation": "本題檢測學生對於 Review 1 一段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 1 一段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "challenge",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng4_q11",
+      "subject_id": "eng",
+      "chapter_id": "eng4",
+      "stem": "What should we remember when answering \"What are these?\" in Review 1 一段跨單元統整複習?",
+      "options": [
+        "Use 'They are...' instead of 'These are...'",
+        "Use 'It is...' instead of 'They are...'",
+        "Always repeat the question",
+        "Never use pronouns"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Review 1 一段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 1 一段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "challenge",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng4_q12",
+      "subject_id": "eng",
+      "chapter_id": "eng4",
+      "stem": "How does mastering Review 1 一段跨單元統整複習 help 7th-grade students in their English learning journey?",
+      "options": [
+        "Builds authentic communicative skills and solid grammar foundations for junior high English",
+        "Guarantees no need to practice listening ever again",
+        "Replaces Chinese completely in everyday life",
+        "Requires only memorizing dictionary page numbers"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Review 1 一段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 1 一段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "challenge",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng5_q1",
+      "subject_id": "eng",
+      "chapter_id": "eng5",
+      "stem": "What is the key grammatical focus in Unit 3 Where Are You From??",
+      "options": [
+        "Subject-verb agreement and proper sentence structure",
+        "Memorizing random irregular words without grammar",
+        "Translating words backward",
+        "Ignoring all punctuation marks"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 3 Where Are You From? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 3 Where Are You From? 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng5_q2",
+      "subject_id": "eng",
+      "chapter_id": "eng5",
+      "stem": "Which sentence best represents the main theme of Unit 3 Where Are You From??",
+      "options": [
+        "I does not know the answer.",
+        "We learn English by practicing speaking and reading every day.",
+        "He are my best friend forever.",
+        "She like to play basketball yesterday."
+      ],
+      "answer": 1,
+      "explanation": "本題檢測學生對於 Unit 3 Where Are You From? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 3 Where Are You From? 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng5_q3",
+      "subject_id": "eng",
+      "chapter_id": "eng5",
+      "stem": "Choose the correct word to complete the sentence based on Unit 3 Where Are You From?: \"_____ your brother like to play sports?\"",
+      "options": [
+        "Do",
+        "Is",
+        "Does",
+        "Are"
+      ],
+      "answer": 2,
+      "explanation": "本題檢測學生對於 Unit 3 Where Are You From? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 3 Where Are You From? 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng5_q4",
+      "subject_id": "eng",
+      "chapter_id": "eng5",
+      "stem": "Which of the following is the correct response in daily communication for Unit 3 Where Are You From??",
+      "options": [
+        "That sounds like a great idea! Let's go.",
+        "I am not like that.",
+        "He don't know.",
+        "She aren't here."
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 3 Where Are You From? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 3 Where Are You From? 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng5_q5",
+      "subject_id": "eng",
+      "chapter_id": "eng5",
+      "stem": "Identify the common mistake mentioned in Unit 3 Where Are You From?:",
+      "options": [
+        "Using a capital letter at the start of a sentence",
+        "Forgetting the third-person singular 's' or auxiliary verb agreement",
+        "Ending a sentence with a period",
+        "Putting an adjective before a noun"
+      ],
+      "answer": 1,
+      "explanation": "本題檢測學生對於 Unit 3 Where Are You From? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 3 Where Are You From? 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng5_q6",
+      "subject_id": "eng",
+      "chapter_id": "eng5",
+      "stem": "Choose the grammatically CORRECT sentence:",
+      "options": [
+        "He never is late for school.",
+        "How often does you wash your hands?",
+        "There have two apples on the desk.",
+        "She is reading a book in the library right now."
+      ],
+      "answer": 3,
+      "explanation": "本題檢測學生對於 Unit 3 Where Are You From? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 3 Where Are You From? 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng5_q7",
+      "subject_id": "eng",
+      "chapter_id": "eng5",
+      "stem": "Which question word is used to ask about frequency in Unit 3 Where Are You From??",
+      "options": [
+        "How often",
+        "How much",
+        "How many",
+        "How old"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 3 Where Are You From? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 3 Where Are You From? 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng5_q8",
+      "subject_id": "eng",
+      "chapter_id": "eng5",
+      "stem": "\"Look! The children _____ in the pool happily.\" Which verb form fits best?",
+      "options": [
+        "swims",
+        "is swimming",
+        "are swimming",
+        "swim"
+      ],
+      "answer": 2,
+      "explanation": "本題檢測學生對於 Unit 3 Where Are You From? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 3 Where Are You From? 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng5_q9",
+      "subject_id": "eng",
+      "chapter_id": "eng5",
+      "stem": "Which adverb of frequency means '100% of the time'?",
+      "options": [
+        "always",
+        "usually",
+        "often",
+        "seldom"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 3 Where Are You From? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 3 Where Are You From? 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng5_q10",
+      "subject_id": "eng",
+      "chapter_id": "eng5",
+      "stem": "Choose the correct preposition: \"My house is _____ the park and the bookstore.\"",
+      "options": [
+        "next",
+        "between",
+        "under",
+        "in front"
+      ],
+      "answer": 1,
+      "explanation": "本題檢測學生對於 Unit 3 Where Are You From? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 3 Where Are You From? 英語核心素養測驗",
+      "difficulty": "challenge",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng5_q11",
+      "subject_id": "eng",
+      "chapter_id": "eng5",
+      "stem": "What should we remember when answering \"What are these?\" in Unit 3 Where Are You From??",
+      "options": [
+        "Use 'They are...' instead of 'These are...'",
+        "Use 'It is...' instead of 'They are...'",
+        "Always repeat the question",
+        "Never use pronouns"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 3 Where Are You From? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 3 Where Are You From? 英語核心素養測驗",
+      "difficulty": "challenge",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng5_q12",
+      "subject_id": "eng",
+      "chapter_id": "eng5",
+      "stem": "How does mastering Unit 3 Where Are You From? help 7th-grade students in their English learning journey?",
+      "options": [
+        "Builds authentic communicative skills and solid grammar foundations for junior high English",
+        "Guarantees no need to practice listening ever again",
+        "Replaces Chinese completely in everyday life",
+        "Requires only memorizing dictionary page numbers"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 3 Where Are You From? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 3 Where Are You From? 英語核心素養測驗",
+      "difficulty": "challenge",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng6_q1",
+      "subject_id": "eng",
+      "chapter_id": "eng6",
+      "stem": "What is the key grammatical focus in Unit 4 What Are You Doing??",
+      "options": [
+        "Subject-verb agreement and proper sentence structure",
+        "Memorizing random irregular words without grammar",
+        "Translating words backward",
+        "Ignoring all punctuation marks"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 4 What Are You Doing? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 4 What Are You Doing? 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng6_q2",
+      "subject_id": "eng",
+      "chapter_id": "eng6",
+      "stem": "Which sentence best represents the main theme of Unit 4 What Are You Doing??",
+      "options": [
+        "I does not know the answer.",
+        "We learn English by practicing speaking and reading every day.",
+        "He are my best friend forever.",
+        "She like to play basketball yesterday."
+      ],
+      "answer": 1,
+      "explanation": "本題檢測學生對於 Unit 4 What Are You Doing? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 4 What Are You Doing? 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng6_q3",
+      "subject_id": "eng",
+      "chapter_id": "eng6",
+      "stem": "Choose the correct word to complete the sentence based on Unit 4 What Are You Doing?: \"_____ your brother like to play sports?\"",
+      "options": [
+        "Do",
+        "Is",
+        "Does",
+        "Are"
+      ],
+      "answer": 2,
+      "explanation": "本題檢測學生對於 Unit 4 What Are You Doing? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 4 What Are You Doing? 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng6_q4",
+      "subject_id": "eng",
+      "chapter_id": "eng6",
+      "stem": "Which of the following is the correct response in daily communication for Unit 4 What Are You Doing??",
+      "options": [
+        "That sounds like a great idea! Let's go.",
+        "I am not like that.",
+        "He don't know.",
+        "She aren't here."
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 4 What Are You Doing? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 4 What Are You Doing? 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng6_q5",
+      "subject_id": "eng",
+      "chapter_id": "eng6",
+      "stem": "Identify the common mistake mentioned in Unit 4 What Are You Doing?:",
+      "options": [
+        "Using a capital letter at the start of a sentence",
+        "Forgetting the third-person singular 's' or auxiliary verb agreement",
+        "Ending a sentence with a period",
+        "Putting an adjective before a noun"
+      ],
+      "answer": 1,
+      "explanation": "本題檢測學生對於 Unit 4 What Are You Doing? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 4 What Are You Doing? 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng6_q6",
+      "subject_id": "eng",
+      "chapter_id": "eng6",
+      "stem": "Choose the grammatically CORRECT sentence:",
+      "options": [
+        "He never is late for school.",
+        "How often does you wash your hands?",
+        "There have two apples on the desk.",
+        "She is reading a book in the library right now."
+      ],
+      "answer": 3,
+      "explanation": "本題檢測學生對於 Unit 4 What Are You Doing? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 4 What Are You Doing? 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng6_q7",
+      "subject_id": "eng",
+      "chapter_id": "eng6",
+      "stem": "Which question word is used to ask about frequency in Unit 4 What Are You Doing??",
+      "options": [
+        "How often",
+        "How much",
+        "How many",
+        "How old"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 4 What Are You Doing? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 4 What Are You Doing? 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng6_q8",
+      "subject_id": "eng",
+      "chapter_id": "eng6",
+      "stem": "\"Look! The children _____ in the pool happily.\" Which verb form fits best?",
+      "options": [
+        "swims",
+        "is swimming",
+        "are swimming",
+        "swim"
+      ],
+      "answer": 2,
+      "explanation": "本題檢測學生對於 Unit 4 What Are You Doing? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 4 What Are You Doing? 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng6_q9",
+      "subject_id": "eng",
+      "chapter_id": "eng6",
+      "stem": "Which adverb of frequency means '100% of the time'?",
+      "options": [
+        "always",
+        "usually",
+        "often",
+        "seldom"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 4 What Are You Doing? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 4 What Are You Doing? 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng6_q10",
+      "subject_id": "eng",
+      "chapter_id": "eng6",
+      "stem": "Choose the correct preposition: \"My house is _____ the park and the bookstore.\"",
+      "options": [
+        "next",
+        "between",
+        "under",
+        "in front"
+      ],
+      "answer": 1,
+      "explanation": "本題檢測學生對於 Unit 4 What Are You Doing? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 4 What Are You Doing? 英語核心素養測驗",
+      "difficulty": "challenge",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng6_q11",
+      "subject_id": "eng",
+      "chapter_id": "eng6",
+      "stem": "What should we remember when answering \"What are these?\" in Unit 4 What Are You Doing??",
+      "options": [
+        "Use 'They are...' instead of 'These are...'",
+        "Use 'It is...' instead of 'They are...'",
+        "Always repeat the question",
+        "Never use pronouns"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 4 What Are You Doing? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 4 What Are You Doing? 英語核心素養測驗",
+      "difficulty": "challenge",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng6_q12",
+      "subject_id": "eng",
+      "chapter_id": "eng6",
+      "stem": "How does mastering Unit 4 What Are You Doing? help 7th-grade students in their English learning journey?",
+      "options": [
+        "Builds authentic communicative skills and solid grammar foundations for junior high English",
+        "Guarantees no need to practice listening ever again",
+        "Replaces Chinese completely in everyday life",
+        "Requires only memorizing dictionary page numbers"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 4 What Are You Doing? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 4 What Are You Doing? 英語核心素養測驗",
+      "difficulty": "challenge",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng7_q1",
+      "subject_id": "eng",
+      "chapter_id": "eng7",
+      "stem": "What is the key grammatical focus in Review 2 二段跨單元統整複習?",
+      "options": [
+        "Subject-verb agreement and proper sentence structure",
+        "Memorizing random irregular words without grammar",
+        "Translating words backward",
+        "Ignoring all punctuation marks"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Review 2 二段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 2 二段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng7_q2",
+      "subject_id": "eng",
+      "chapter_id": "eng7",
+      "stem": "Which sentence best represents the main theme of Review 2 二段跨單元統整複習?",
+      "options": [
+        "I does not know the answer.",
+        "We learn English by practicing speaking and reading every day.",
+        "He are my best friend forever.",
+        "She like to play basketball yesterday."
+      ],
+      "answer": 1,
+      "explanation": "本題檢測學生對於 Review 2 二段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 2 二段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng7_q3",
+      "subject_id": "eng",
+      "chapter_id": "eng7",
+      "stem": "Choose the correct word to complete the sentence based on Review 2 二段跨單元統整複習: \"_____ your brother like to play sports?\"",
+      "options": [
+        "Do",
+        "Is",
+        "Does",
+        "Are"
+      ],
+      "answer": 2,
+      "explanation": "本題檢測學生對於 Review 2 二段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 2 二段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng7_q4",
+      "subject_id": "eng",
+      "chapter_id": "eng7",
+      "stem": "Which of the following is the correct response in daily communication for Review 2 二段跨單元統整複習?",
+      "options": [
+        "That sounds like a great idea! Let's go.",
+        "I am not like that.",
+        "He don't know.",
+        "She aren't here."
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Review 2 二段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 2 二段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng7_q5",
+      "subject_id": "eng",
+      "chapter_id": "eng7",
+      "stem": "Identify the common mistake mentioned in Review 2 二段跨單元統整複習:",
+      "options": [
+        "Using a capital letter at the start of a sentence",
+        "Forgetting the third-person singular 's' or auxiliary verb agreement",
+        "Ending a sentence with a period",
+        "Putting an adjective before a noun"
+      ],
+      "answer": 1,
+      "explanation": "本題檢測學生對於 Review 2 二段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 2 二段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng7_q6",
+      "subject_id": "eng",
+      "chapter_id": "eng7",
+      "stem": "Choose the grammatically CORRECT sentence:",
+      "options": [
+        "He never is late for school.",
+        "How often does you wash your hands?",
+        "There have two apples on the desk.",
+        "She is reading a book in the library right now."
+      ],
+      "answer": 3,
+      "explanation": "本題檢測學生對於 Review 2 二段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 2 二段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng7_q7",
+      "subject_id": "eng",
+      "chapter_id": "eng7",
+      "stem": "Which question word is used to ask about frequency in Review 2 二段跨單元統整複習?",
+      "options": [
+        "How often",
+        "How much",
+        "How many",
+        "How old"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Review 2 二段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 2 二段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng7_q8",
+      "subject_id": "eng",
+      "chapter_id": "eng7",
+      "stem": "\"Look! The children _____ in the pool happily.\" Which verb form fits best?",
+      "options": [
+        "swims",
+        "is swimming",
+        "are swimming",
+        "swim"
+      ],
+      "answer": 2,
+      "explanation": "本題檢測學生對於 Review 2 二段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 2 二段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng7_q9",
+      "subject_id": "eng",
+      "chapter_id": "eng7",
+      "stem": "Which adverb of frequency means '100% of the time'?",
+      "options": [
+        "always",
+        "usually",
+        "often",
+        "seldom"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Review 2 二段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 2 二段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng7_q10",
+      "subject_id": "eng",
+      "chapter_id": "eng7",
+      "stem": "Choose the correct preposition: \"My house is _____ the park and the bookstore.\"",
+      "options": [
+        "next",
+        "between",
+        "under",
+        "in front"
+      ],
+      "answer": 1,
+      "explanation": "本題檢測學生對於 Review 2 二段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 2 二段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "challenge",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng7_q11",
+      "subject_id": "eng",
+      "chapter_id": "eng7",
+      "stem": "What should we remember when answering \"What are these?\" in Review 2 二段跨單元統整複習?",
+      "options": [
+        "Use 'They are...' instead of 'These are...'",
+        "Use 'It is...' instead of 'They are...'",
+        "Always repeat the question",
+        "Never use pronouns"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Review 2 二段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 2 二段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "challenge",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng7_q12",
+      "subject_id": "eng",
+      "chapter_id": "eng7",
+      "stem": "How does mastering Review 2 二段跨單元統整複習 help 7th-grade students in their English learning journey?",
+      "options": [
+        "Builds authentic communicative skills and solid grammar foundations for junior high English",
+        "Guarantees no need to practice listening ever again",
+        "Replaces Chinese completely in everyday life",
+        "Requires only memorizing dictionary page numbers"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Review 2 二段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 2 二段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "challenge",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng8_q1",
+      "subject_id": "eng",
+      "chapter_id": "eng8",
+      "stem": "What is the key grammatical focus in Unit 5 What Do You Do on Weekends??",
+      "options": [
+        "Subject-verb agreement and proper sentence structure",
+        "Memorizing random irregular words without grammar",
+        "Translating words backward",
+        "Ignoring all punctuation marks"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 5 What Do You Do on Weekends? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 5 What Do You Do on Weekends? 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng8_q2",
+      "subject_id": "eng",
+      "chapter_id": "eng8",
+      "stem": "Which sentence best represents the main theme of Unit 5 What Do You Do on Weekends??",
+      "options": [
+        "I does not know the answer.",
+        "We learn English by practicing speaking and reading every day.",
+        "He are my best friend forever.",
+        "She like to play basketball yesterday."
+      ],
+      "answer": 1,
+      "explanation": "本題檢測學生對於 Unit 5 What Do You Do on Weekends? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 5 What Do You Do on Weekends? 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng8_q3",
+      "subject_id": "eng",
+      "chapter_id": "eng8",
+      "stem": "Choose the correct word to complete the sentence based on Unit 5 What Do You Do on Weekends?: \"_____ your brother like to play sports?\"",
+      "options": [
+        "Do",
+        "Is",
+        "Does",
+        "Are"
+      ],
+      "answer": 2,
+      "explanation": "本題檢測學生對於 Unit 5 What Do You Do on Weekends? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 5 What Do You Do on Weekends? 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng8_q4",
+      "subject_id": "eng",
+      "chapter_id": "eng8",
+      "stem": "Which of the following is the correct response in daily communication for Unit 5 What Do You Do on Weekends??",
+      "options": [
+        "That sounds like a great idea! Let's go.",
+        "I am not like that.",
+        "He don't know.",
+        "She aren't here."
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 5 What Do You Do on Weekends? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 5 What Do You Do on Weekends? 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng8_q5",
+      "subject_id": "eng",
+      "chapter_id": "eng8",
+      "stem": "Identify the common mistake mentioned in Unit 5 What Do You Do on Weekends?:",
+      "options": [
+        "Using a capital letter at the start of a sentence",
+        "Forgetting the third-person singular 's' or auxiliary verb agreement",
+        "Ending a sentence with a period",
+        "Putting an adjective before a noun"
+      ],
+      "answer": 1,
+      "explanation": "本題檢測學生對於 Unit 5 What Do You Do on Weekends? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 5 What Do You Do on Weekends? 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng8_q6",
+      "subject_id": "eng",
+      "chapter_id": "eng8",
+      "stem": "Choose the grammatically CORRECT sentence:",
+      "options": [
+        "He never is late for school.",
+        "How often does you wash your hands?",
+        "There have two apples on the desk.",
+        "She is reading a book in the library right now."
+      ],
+      "answer": 3,
+      "explanation": "本題檢測學生對於 Unit 5 What Do You Do on Weekends? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 5 What Do You Do on Weekends? 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng8_q7",
+      "subject_id": "eng",
+      "chapter_id": "eng8",
+      "stem": "Which question word is used to ask about frequency in Unit 5 What Do You Do on Weekends??",
+      "options": [
+        "How often",
+        "How much",
+        "How many",
+        "How old"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 5 What Do You Do on Weekends? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 5 What Do You Do on Weekends? 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng8_q8",
+      "subject_id": "eng",
+      "chapter_id": "eng8",
+      "stem": "\"Look! The children _____ in the pool happily.\" Which verb form fits best?",
+      "options": [
+        "swims",
+        "is swimming",
+        "are swimming",
+        "swim"
+      ],
+      "answer": 2,
+      "explanation": "本題檢測學生對於 Unit 5 What Do You Do on Weekends? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 5 What Do You Do on Weekends? 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng8_q9",
+      "subject_id": "eng",
+      "chapter_id": "eng8",
+      "stem": "Which adverb of frequency means '100% of the time'?",
+      "options": [
+        "always",
+        "usually",
+        "often",
+        "seldom"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 5 What Do You Do on Weekends? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 5 What Do You Do on Weekends? 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng8_q10",
+      "subject_id": "eng",
+      "chapter_id": "eng8",
+      "stem": "Choose the correct preposition: \"My house is _____ the park and the bookstore.\"",
+      "options": [
+        "next",
+        "between",
+        "under",
+        "in front"
+      ],
+      "answer": 1,
+      "explanation": "本題檢測學生對於 Unit 5 What Do You Do on Weekends? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 5 What Do You Do on Weekends? 英語核心素養測驗",
+      "difficulty": "challenge",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng8_q11",
+      "subject_id": "eng",
+      "chapter_id": "eng8",
+      "stem": "What should we remember when answering \"What are these?\" in Unit 5 What Do You Do on Weekends??",
+      "options": [
+        "Use 'They are...' instead of 'These are...'",
+        "Use 'It is...' instead of 'They are...'",
+        "Always repeat the question",
+        "Never use pronouns"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 5 What Do You Do on Weekends? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 5 What Do You Do on Weekends? 英語核心素養測驗",
+      "difficulty": "challenge",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng8_q12",
+      "subject_id": "eng",
+      "chapter_id": "eng8",
+      "stem": "How does mastering Unit 5 What Do You Do on Weekends? help 7th-grade students in their English learning journey?",
+      "options": [
+        "Builds authentic communicative skills and solid grammar foundations for junior high English",
+        "Guarantees no need to practice listening ever again",
+        "Replaces Chinese completely in everyday life",
+        "Requires only memorizing dictionary page numbers"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 5 What Do You Do on Weekends? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 5 What Do You Do on Weekends? 英語核心素養測驗",
+      "difficulty": "challenge",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng9_q1",
+      "subject_id": "eng",
+      "chapter_id": "eng9",
+      "stem": "What is the key grammatical focus in Unit 6 How Often Do You Exercise??",
+      "options": [
+        "Subject-verb agreement and proper sentence structure",
+        "Memorizing random irregular words without grammar",
+        "Translating words backward",
+        "Ignoring all punctuation marks"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 6 How Often Do You Exercise? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 6 How Often Do You Exercise? 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng9_q2",
+      "subject_id": "eng",
+      "chapter_id": "eng9",
+      "stem": "Which sentence best represents the main theme of Unit 6 How Often Do You Exercise??",
+      "options": [
+        "I does not know the answer.",
+        "We learn English by practicing speaking and reading every day.",
+        "He are my best friend forever.",
+        "She like to play basketball yesterday."
+      ],
+      "answer": 1,
+      "explanation": "本題檢測學生對於 Unit 6 How Often Do You Exercise? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 6 How Often Do You Exercise? 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng9_q3",
+      "subject_id": "eng",
+      "chapter_id": "eng9",
+      "stem": "Choose the correct word to complete the sentence based on Unit 6 How Often Do You Exercise?: \"_____ your brother like to play sports?\"",
+      "options": [
+        "Do",
+        "Is",
+        "Does",
+        "Are"
+      ],
+      "answer": 2,
+      "explanation": "本題檢測學生對於 Unit 6 How Often Do You Exercise? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 6 How Often Do You Exercise? 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng9_q4",
+      "subject_id": "eng",
+      "chapter_id": "eng9",
+      "stem": "Which of the following is the correct response in daily communication for Unit 6 How Often Do You Exercise??",
+      "options": [
+        "That sounds like a great idea! Let's go.",
+        "I am not like that.",
+        "He don't know.",
+        "She aren't here."
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 6 How Often Do You Exercise? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 6 How Often Do You Exercise? 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng9_q5",
+      "subject_id": "eng",
+      "chapter_id": "eng9",
+      "stem": "Identify the common mistake mentioned in Unit 6 How Often Do You Exercise?:",
+      "options": [
+        "Using a capital letter at the start of a sentence",
+        "Forgetting the third-person singular 's' or auxiliary verb agreement",
+        "Ending a sentence with a period",
+        "Putting an adjective before a noun"
+      ],
+      "answer": 1,
+      "explanation": "本題檢測學生對於 Unit 6 How Often Do You Exercise? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 6 How Often Do You Exercise? 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng9_q6",
+      "subject_id": "eng",
+      "chapter_id": "eng9",
+      "stem": "Choose the grammatically CORRECT sentence:",
+      "options": [
+        "He never is late for school.",
+        "How often does you wash your hands?",
+        "There have two apples on the desk.",
+        "She is reading a book in the library right now."
+      ],
+      "answer": 3,
+      "explanation": "本題檢測學生對於 Unit 6 How Often Do You Exercise? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 6 How Often Do You Exercise? 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng9_q7",
+      "subject_id": "eng",
+      "chapter_id": "eng9",
+      "stem": "Which question word is used to ask about frequency in Unit 6 How Often Do You Exercise??",
+      "options": [
+        "How often",
+        "How much",
+        "How many",
+        "How old"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 6 How Often Do You Exercise? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 6 How Often Do You Exercise? 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng9_q8",
+      "subject_id": "eng",
+      "chapter_id": "eng9",
+      "stem": "\"Look! The children _____ in the pool happily.\" Which verb form fits best?",
+      "options": [
+        "swims",
+        "is swimming",
+        "are swimming",
+        "swim"
+      ],
+      "answer": 2,
+      "explanation": "本題檢測學生對於 Unit 6 How Often Do You Exercise? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 6 How Often Do You Exercise? 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng9_q9",
+      "subject_id": "eng",
+      "chapter_id": "eng9",
+      "stem": "Which adverb of frequency means '100% of the time'?",
+      "options": [
+        "always",
+        "usually",
+        "often",
+        "seldom"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 6 How Often Do You Exercise? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 6 How Often Do You Exercise? 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng9_q10",
+      "subject_id": "eng",
+      "chapter_id": "eng9",
+      "stem": "Choose the correct preposition: \"My house is _____ the park and the bookstore.\"",
+      "options": [
+        "next",
+        "between",
+        "under",
+        "in front"
+      ],
+      "answer": 1,
+      "explanation": "本題檢測學生對於 Unit 6 How Often Do You Exercise? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 6 How Often Do You Exercise? 英語核心素養測驗",
+      "difficulty": "challenge",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng9_q11",
+      "subject_id": "eng",
+      "chapter_id": "eng9",
+      "stem": "What should we remember when answering \"What are these?\" in Unit 6 How Often Do You Exercise??",
+      "options": [
+        "Use 'They are...' instead of 'These are...'",
+        "Use 'It is...' instead of 'They are...'",
+        "Always repeat the question",
+        "Never use pronouns"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 6 How Often Do You Exercise? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 6 How Often Do You Exercise? 英語核心素養測驗",
+      "difficulty": "challenge",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng9_q12",
+      "subject_id": "eng",
+      "chapter_id": "eng9",
+      "stem": "How does mastering Unit 6 How Often Do You Exercise? help 7th-grade students in their English learning journey?",
+      "options": [
+        "Builds authentic communicative skills and solid grammar foundations for junior high English",
+        "Guarantees no need to practice listening ever again",
+        "Replaces Chinese completely in everyday life",
+        "Requires only memorizing dictionary page numbers"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Unit 6 How Often Do You Exercise? 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Unit 6 How Often Do You Exercise? 英語核心素養測驗",
+      "difficulty": "challenge",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng10_q1",
+      "subject_id": "eng",
+      "chapter_id": "eng10",
+      "stem": "What is the key grammatical focus in Review 3 三段跨單元統整複習?",
+      "options": [
+        "Subject-verb agreement and proper sentence structure",
+        "Memorizing random irregular words without grammar",
+        "Translating words backward",
+        "Ignoring all punctuation marks"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Review 3 三段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 3 三段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng10_q2",
+      "subject_id": "eng",
+      "chapter_id": "eng10",
+      "stem": "Which sentence best represents the main theme of Review 3 三段跨單元統整複習?",
+      "options": [
+        "I does not know the answer.",
+        "We learn English by practicing speaking and reading every day.",
+        "He are my best friend forever.",
+        "She like to play basketball yesterday."
+      ],
+      "answer": 1,
+      "explanation": "本題檢測學生對於 Review 3 三段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 3 三段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng10_q3",
+      "subject_id": "eng",
+      "chapter_id": "eng10",
+      "stem": "Choose the correct word to complete the sentence based on Review 3 三段跨單元統整複習: \"_____ your brother like to play sports?\"",
+      "options": [
+        "Do",
+        "Is",
+        "Does",
+        "Are"
+      ],
+      "answer": 2,
+      "explanation": "本題檢測學生對於 Review 3 三段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 3 三段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng10_q4",
+      "subject_id": "eng",
+      "chapter_id": "eng10",
+      "stem": "Which of the following is the correct response in daily communication for Review 3 三段跨單元統整複習?",
+      "options": [
+        "That sounds like a great idea! Let's go.",
+        "I am not like that.",
+        "He don't know.",
+        "She aren't here."
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Review 3 三段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 3 三段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "basic",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng10_q5",
+      "subject_id": "eng",
+      "chapter_id": "eng10",
+      "stem": "Identify the common mistake mentioned in Review 3 三段跨單元統整複習:",
+      "options": [
+        "Using a capital letter at the start of a sentence",
+        "Forgetting the third-person singular 's' or auxiliary verb agreement",
+        "Ending a sentence with a period",
+        "Putting an adjective before a noun"
+      ],
+      "answer": 1,
+      "explanation": "本題檢測學生對於 Review 3 三段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 3 三段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng10_q6",
+      "subject_id": "eng",
+      "chapter_id": "eng10",
+      "stem": "Choose the grammatically CORRECT sentence:",
+      "options": [
+        "He never is late for school.",
+        "How often does you wash your hands?",
+        "There have two apples on the desk.",
+        "She is reading a book in the library right now."
+      ],
+      "answer": 3,
+      "explanation": "本題檢測學生對於 Review 3 三段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 3 三段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng10_q7",
+      "subject_id": "eng",
+      "chapter_id": "eng10",
+      "stem": "Which question word is used to ask about frequency in Review 3 三段跨單元統整複習?",
+      "options": [
+        "How often",
+        "How much",
+        "How many",
+        "How old"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Review 3 三段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 3 三段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng10_q8",
+      "subject_id": "eng",
+      "chapter_id": "eng10",
+      "stem": "\"Look! The children _____ in the pool happily.\" Which verb form fits best?",
+      "options": [
+        "swims",
+        "is swimming",
+        "are swimming",
+        "swim"
+      ],
+      "answer": 2,
+      "explanation": "本題檢測學生對於 Review 3 三段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 3 三段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng10_q9",
+      "subject_id": "eng",
+      "chapter_id": "eng10",
+      "stem": "Which adverb of frequency means '100% of the time'?",
+      "options": [
+        "always",
+        "usually",
+        "often",
+        "seldom"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Review 3 三段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 3 三段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "medium",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng10_q10",
+      "subject_id": "eng",
+      "chapter_id": "eng10",
+      "stem": "Choose the correct preposition: \"My house is _____ the park and the bookstore.\"",
+      "options": [
+        "next",
+        "between",
+        "under",
+        "in front"
+      ],
+      "answer": 1,
+      "explanation": "本題檢測學生對於 Review 3 三段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 3 三段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "challenge",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng10_q11",
+      "subject_id": "eng",
+      "chapter_id": "eng10",
+      "stem": "What should we remember when answering \"What are these?\" in Review 3 三段跨單元統整複習?",
+      "options": [
+        "Use 'They are...' instead of 'These are...'",
+        "Use 'It is...' instead of 'They are...'",
+        "Always repeat the question",
+        "Never use pronouns"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Review 3 三段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 3 三段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "challenge",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
+    },
+    {
+      "id": "eng10_q12",
+      "subject_id": "eng",
+      "chapter_id": "eng10",
+      "stem": "How does mastering Review 3 三段跨單元統整複習 help 7th-grade students in their English learning journey?",
+      "options": [
+        "Builds authentic communicative skills and solid grammar foundations for junior high English",
+        "Guarantees no need to practice listening ever again",
+        "Replaces Chinese completely in everyday life",
+        "Requires only memorizing dictionary page numbers"
+      ],
+      "answer": 0,
+      "explanation": "本題檢測學生對於 Review 3 三段跨單元統整複習 核心文法句型與字彙之掌握度，能有效強化國中七年級英語閱讀與實戰應答能力。",
+      "concept": "Review 3 三段跨單元統整複習 英語核心素養測驗",
+      "difficulty": "challenge",
+      "exam_tags": [
+        "翰林七上必考",
+        "會考模擬",
+        "生活實用英語"
+      ]
     }
   ]
 };
-
