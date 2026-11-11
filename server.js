@@ -276,6 +276,12 @@ module.exports = { db, importQuestionsDoc, loadQuestionsFile, getQuestionsDoc, a
 // ---------- Express app ----------
 const app = express();
 app.use(express.json({ limit: '2mb' }));
+app.use((req, res, next) => {
+  if (req.path.endsWith('.js') || req.path.endsWith('.html') || req.path.endsWith('.css') || req.path === '/') {
+    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+  }
+  next();
+});
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/api/health', (req, res) => res.json({ ok: true, version: getMeta('questions_version') || '0' }));

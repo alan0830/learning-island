@@ -72,6 +72,9 @@ async function boot() {
     me = null;
   }
 
+  // 先繪製首頁群島與章節目錄，即使尚未登入也能預覽群島與課程
+  await renderHome();
+
   if (!me) {
     renderLoginModal();
     return;
@@ -80,8 +83,6 @@ async function boot() {
     renderChangePasswordModal(true);
     return;
   }
-
-  renderHome();
 }
 
 /* ================= 1. 首頁群島門戶 (PORTAL) ================= */
@@ -126,9 +127,15 @@ async function renderHome() {
               🎬 影音教學
             </button>
             ${me?.role === 'admin' ? '<button class="pill-tool" onclick="renderAdminModal()">👨‍👩‍👧 家長看板</button>' : ''}
-            <button class="pill-tool" onclick="renderUserMenuModal()">
-              👤 ${esc(me?.display_name || me?.username)}
-            </button>
+            ${me ? `
+              <button class="pill-tool" onclick="renderUserMenuModal()">
+                👤 ${esc(me.display_name || me.username)}
+              </button>
+            ` : `
+              <button class="pill-tool" onclick="renderLoginModal()">
+                🔑 登入
+              </button>
+            `}
           </div>
         </header>
 
@@ -219,6 +226,10 @@ async function renderHome() {
 
 /* ================= 2. 島嶼 3D 分割畫面 (SPLIT SCREEN VIEW) ================= */
 async function openIsland(subjectId, initialChapterId) {
+  if (!me) {
+    renderLoginModal();
+    return;
+  }
   currentSubject = content.subjects.find(s => s.id === subjectId) || content.subjects[0];
   try {
     stats = await api('/api/me/stats');
@@ -1366,24 +1377,28 @@ function renderUserMenuModal() {
 
 function renderLoginModal() {
   modalContainer.innerHTML = `
-    <div class="modal-overlay">
-      <div class="modal-dialog" style="max-width:440px">
+    <div class="modal-overlay" onclick="closeModal(event)">
+      <div class="modal-dialog" style="max-width:440px" onclick="event.stopPropagation()">
         <div class="modal-header">
           <h2>登入學習島</h2>
+          <button class="btn-nav-close" onclick="closeModal()">✕</button>
         </div>
         <p style="font-size:14px;color:#a8a29e;margin:0">
           每個學生用自己的帳號登入，進度、星星與錯題分開記錄，在 iPad 或筆電登入同一個帳號即可同步。
         </p>
         <div class="form-group">
           <label>帳號</label>
-          <input class="form-input" id="login-u" autocomplete="username">
+          <input class="form-input" id="login-u" autocomplete="username" placeholder="請輸入帳號" onkeydown="if(event.key==='Enter')doLogin()">
         </div>
         <div class="form-group">
           <label>密碼</label>
-          <input class="form-input" id="login-p" type="password" autocomplete="current-password">
+          <input class="form-input" id="login-p" type="password" autocomplete="current-password" placeholder="請輸入密碼" onkeydown="if(event.key==='Enter')doLogin()">
         </div>
         <p id="login-err" style="color:var(--bad);font-size:13px;margin:0"></p>
         <button class="btn-primary" onclick="doLogin()">登入</button>
+        <div style="font-size:12px;color:#78716c;text-align:center;margin-top:6px">
+          預設家長管理員：admin / changeme123（登入後可建立學生帳號）
+        </div>
       </div>
     </div>
   `;
