@@ -1,7 +1,7 @@
 'use strict';
 /* 學習島：國中群島學習平臺前端核心
  * 靈感來自 bio-islands.netlify.app
- * 整合 7 科 25 章 200 題題庫、SQLite 弱點引擎、3D 低多邊形群島與沉浸式學習抽屜
+ * 整合 7 科 25 章 300 題題庫、SQLite 弱點引擎、3D 低多邊形群島與沉浸式學習抽屜
  */
 
 const app = document.getElementById('app');
@@ -104,7 +104,7 @@ async function renderHome() {
   const totalStars = (stats?.chapters || []).reduce((a, c) => a + c.stars, 0);
   const maxStars = (content?.chapters || []).length * 3;
   const mastered = (stats?.chapters || []).reduce((a, c) => a + c.mastered, 0);
-  const totalQ = content?.questions_count || 200;
+  const totalQ = content?.questions_count || 300;
 
   app.innerHTML = `
     <div class="portal-sea">
@@ -431,7 +431,7 @@ function renderDrawerStudy(chapterId) {
       <div class="sub">${esc(ch.subtitle)}</div>
       <div style="margin-top:8px;font-size:14px;color:var(--star)">
         ${starsStr(st)} <b>${st}/3 顆星</b>
-        <span style="color:#a8a29e">· 已掌握 ${ch.mastered || 0}/${ch.total_questions || 8} 題${ch.accuracy !== null && ch.accuracy !== undefined ? ` · 答對率 ${ch.accuracy}%` : ''}</span>
+        <span style="color:#a8a29e">· 已掌握 ${ch.mastered || 0}/${ch.total_questions || 12} 題${ch.accuracy !== null && ch.accuracy !== undefined ? ` · 答對率 ${ch.accuracy}%` : ''}</span>
       </div>
     </div>
 

@@ -264,7 +264,9 @@ function chapterStats(userId) {
     const qs = db.prepare('SELECT id FROM questions WHERE chapter_id=?').all(c.id).map((r) => r.id);
     const mastered = db.prepare(`SELECT COUNT(DISTINCT question_id) AS n FROM attempts WHERE user_id=? AND chapter_id=? AND is_correct=1`).get(userId, c.id).n;
     const r = byCh.get(c.id) || { total: 0, correct: 0 };
-    const stars = mastered >= 7 ? 3 : mastered >= 5 ? 2 : mastered >= 3 ? 1 : 0;
+    const totalQ = qs.length || 12;
+    const ratio = totalQ > 0 ? mastered / totalQ : 0;
+    const stars = ratio >= 0.8 ? 3 : ratio >= 0.5 ? 2 : ratio >= 0.25 ? 1 : 0;
     return { ...c, total_questions: qs.length, mastered, attempts: r.total, accuracy: r.total ? Math.round((r.correct / r.total) * 100) : null, stars };
   });
 }
@@ -279,7 +281,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/api/health', (req, res) => res.json({ ok: true, version: getMeta('questions_version') || '0' }));
 app.get('/api/content', (req, res) => {
   const doc = getQuestionsDoc();
-  res.json({ subjects: doc.subjects, chapters: doc.chapters, resources: doc.resources || [], video_resources: doc.video_resources || [], version: getMeta('questions_version') || '0' });
+  res.json({
+    subjects: doc.subjects,
+    chapters: doc.chapters,
+    resources: doc.resources || [],
+    video_resources: doc.video_resources || [],
+    version: getMeta('questions_version') || '0',
+    questions_count: doc.questions?.length || 0
+  });
 });
 
 app.post('/api/auth/login', (req, res) => {

@@ -39,17 +39,17 @@ before(async () => {
 });
 after(() => { proc && proc.kill(); });
 
-test('題庫匯入：7 科 25 章 200 題', async () => {
+test('題庫匯入：7 科 25 章 300 題', async () => {
   const r = await call('/api/content');
   assert.equal(r.status, 200);
   assert.equal(r.json.subjects.length, 7);
   assert.equal(r.json.chapters.length, 25);
   const total = r.json.chapters.reduce((a, c) => a, 0);
   assert.ok(total === 0 || true);
-  // 題數用測驗章節驗證：每章 8 題
+  // 題數用測驗章節驗證：每章 12 題
   await login('admin', 'Test1234');
   const q = await call('/api/quiz/chi1');
-  assert.equal(q.json.length, 8);
+  assert.equal(q.json.length, 12);
   assert.ok(Array.isArray(q.json[0].options) && q.json[0].options.length === 4, '測驗選項應為 4 個選項的陣列');
   assert.ok(!('answer' in q.json[0]), '測驗不應直接洩漏答案');
 });
@@ -148,7 +148,7 @@ test('家長看板與題庫更新不清除紀錄', async () => {
   const up = await call('/api/admin/check-updates', { method: 'POST', body: JSON.stringify({}) });
   assert.equal(up.status, 400);
   const info = await call('/api/admin/questions-info');
-  assert.equal(info.json.version, '2');
+  assert.equal(info.json.version, '3');
 });
 
 test('影音教學資源：10 座島共 42 個，連結皆為 https', async () => {
