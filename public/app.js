@@ -686,7 +686,7 @@ function openPaperDrawer() {
   if (!panel) return;
 
   const subjectChapters = (content?.chapters || []).filter(c => c.subject_id === currentSubject.id);
-  const totalQ = subjectChapters.length * 8;
+  const totalQ = subjectChapters.reduce((acc, c) => acc + (c.total_questions || 12), 0);
   const opts = [10, 20];
   if (totalQ >= 30) opts.push(30);
 
