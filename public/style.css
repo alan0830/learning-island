@@ -1,0 +1,103 @@
+:root{--bg:#f0f7ff;--card:#fff;--ink:#1e293b;--muted:#64748b;--blue:#2563eb;--green:#16a34a;--amber:#d97706}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+header{background:#0f766e;color:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+header h1{margin:0;font-size:20px}header button{background:#fff;color:#0f766e;border:0;border-radius:8px;padding:6px 12px;cursor:pointer}
+main{max-width:960px;margin:0 auto;padding:18px}
+.card{background:var(--card);border-radius:14px;padding:18px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+h2{margin-top:0}h3{margin-bottom:6px}.muted{color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.island{cursor:pointer;border:2px solid #e2e8f0;border-radius:12px;padding:14px;background:#fff}
+.island:hover{border-color:var(--blue)}
+.btn{background:var(--blue);color:#fff;border:0;border-radius:8px;padding:10px 16px;cursor:pointer;font-size:15px;margin:4px 4px 4px 0}
+.btn.green{background:var(--green)}.btn.amber{background:var(--amber)}.btn.danger{background:#dc2626}.btn.ghost{background:#e2e8f0;color:var(--ink)}
+input,select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:15px;margin:6px 0}
+.opt{display:block;width:100%;text-align:left;background:#f8fafc;border:1px solid #cbd5e1;border-radius:10px;padding:12px;margin:8px 0;cursor:pointer;font-size:15px}
+.opt.correct{background:#dcfce7;border-color:var(--green)}.opt.wrong{background:#fee2e2;border-color:#dc2626}.opt:disabled{cursor:default}
+.star{color:#f59e0b}.pill{display:inline-block;background:#e0f2fe;border-radius:20px;padding:2px 10px;font-size:13px;margin:2px}
+.warn{background:#fef3c7;border:1px solid #f59e0b;border-radius:10px;padding:12px;margin-bottom:14px}
+table{width:100%;border-collapse:collapse}td,th{border-bottom:1px solid #e2e8f0;padding:8px;text-align:left;font-size:14px}
+.vids{border-top:1px solid #e2e8f0;margin-top:12px;padding-top:4px}.vids p{margin:6px 0}.vids a{word-break:break-all}
+@media print{.no-print{display:none}}
+/* 首頁摘要：扁橫列，問候＋統計＋弱點在左，按鈕在右 */
+.home-summary{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:12px 16px}
+.hs-main{flex:1 1 320px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.hs-hello{font-size:18px;font-weight:700}
+.hs-stats,.hs-weak{font-size:13px}
+.home-summary .toolbar{display:flex;flex-wrap:wrap;gap:4px}
+.home-summary .btn{padding:8px 12px;font-size:14px;margin:2px}
+/* 島嶼地圖：上淺藍天空、下飽和中藍海帶，高度只包島與卡片 */
+.map-sea{background:linear-gradient(180deg,#bae6fd 0%,#7dd3fc 30%,#38bdf8 100%);border-radius:18px;padding:12px 12px 8px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.map-title{text-align:center;font-size:18px;font-weight:700;color:#0c4a6e;margin:2px 0 8px}
+/* 島寬約 180px，自動換行置中：寬螢幕上排 4 座、下排 3 座自然錯開 */
+.island-map{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 12px}
+.isle{flex:0 1 180px;cursor:pointer;text-align:center;transition:transform .15s}
+.isle:hover{transform:translateY(-4px)}
+.isle-scene{display:flex;flex-direction:column;align-items:center}
+.isle-icon{font-size:46px;line-height:1;z-index:1;margin-bottom:-14px;filter:drop-shadow(0 2px 2px rgba(0,0,0,.18))}
+/* 島身：clip-path 不規則多邊形，左右尖、底部略平；上綠草地、下米色沙灘 */
+.isle-body{width:100%;height:66px;background:linear-gradient(180deg,#a7f3c9 0%,#86efac 52%,#fde68a 52%,#fcd34d 100%);clip-path:polygon(20% 0,80% 0,95% 28%,100% 45%,88% 74%,70% 100%,30% 100%,12% 74%,0 45%,5% 28%)}
+/* 島下白卡：小而密，頂部一條主題色細線，星星金色置底 */
+.isle-card{background:#fff;border-top:3px solid var(--island-color,#2563eb);border-radius:12px;padding:8px 10px 10px;margin-top:-4px;box-shadow:0 2px 6px rgba(2,132,199,.25);display:flex;flex-direction:column;align-items:center;gap:1px}
+.isle-card b{font-size:16px}
+.isle-desc{font-size:12px}
+.isle-card .muted{font-size:13px}
+.isle-stars{color:#d97706;font-weight:700;font-size:14px;margin-top:2px}
+.pbar{width:80%;height:6px;background:#e2e8f0;border-radius:8px;overflow:hidden;margin-top:5px}
+.pbar div{height:100%;background:#16a34a}
+.map-note{text-align:center;margin:8px 0 2px;color:#0c4a6e}
+@media (max-width:480px){.isle{flex-basis:150px}.isle-icon{font-size:38px}.isle-body{height:56px}}
+/* 年級切換 */
+.grade-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.grade-tab{background:#e0f2fe;color:#0c4a6e;border:2px solid #bae6fd;border-radius:20px;padding:6px 16px;cursor:pointer;font-size:15px}
+.grade-tab.active{background:#0284c7;color:#fff;border-color:#0284c7}
+.coming{text-align:center;background:#f0fdf4}
+/* 科目頁：左右對分——左島嶼地圖、右深色索引面板；窄螢幕上下堆疊 */
+.subj-split{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start;margin-bottom:16px}
+@media (max-width:860px){.subj-split{grid-template-columns:1fr}}
+/* 地圖：藍綠海面、中央主島、木橋連接各章小島 */
+.subj-map{position:relative;height:560px;border-radius:18px;overflow:hidden;background:linear-gradient(180deg,#0d9488 0%,#0891b2 45%,#0369a1 100%);box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.subj-bridges{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.map-hub,.map-chapter{position:absolute;transform:translate(-50%,-50%);z-index:1;display:flex;flex-direction:column;align-items:center}
+.map-hub .isle-body{width:170px;height:78px}
+.map-hub-icon{font-size:54px;line-height:1;z-index:1;margin-bottom:-12px;filter:drop-shadow(0 2px 2px rgba(0,0,0,.25))}
+.map-chapter{cursor:pointer}
+.map-chapter .isle-body{width:118px;height:44px;transition:transform .15s,filter .15s}
+.map-chapter:hover .isle-body{transform:scale(1.06)}
+.map-chapter.selected .isle-body{filter:drop-shadow(0 0 12px rgba(251,191,36,.95)) brightness(1.1);transform:scale(1.08)}
+.map-badge-row{display:flex;gap:4px;align-items:center;margin-bottom:2px}
+.map-badge{color:#fff;border-radius:999px;padding:1px 9px;font-size:12px;font-weight:700;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.map-stars{background:rgba(0,0,0,.55);color:#fbbf24;border-radius:999px;padding:1px 7px;font-size:11px;white-space:nowrap}
+.map-label{background:rgba(0,0,0,.55);color:#fff;border-radius:999px;padding:2px 9px;font-size:12px;margin-top:3px;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.map-cloud{position:absolute;z-index:0;font-size:26px;opacity:.75;filter:drop-shadow(0 2px 2px rgba(0,0,0,.15))}
+.map-boat{position:absolute;transform:translate(-50%,-50%);z-index:1;font-size:26px}
+@media (max-width:860px){.subj-map{height:460px}}
+@media (max-width:480px){.subj-map{height:420px}.map-hub .isle-body{width:140px;height:64px}.map-hub-icon{font-size:44px}.map-chapter .isle-body{width:96px;height:36px}.map-label{max-width:120px}}
+/* 右側深色索引面板 */
+.subj-panel{background:#1c1917;color:#f5f5f4;border-radius:14px;padding:18px;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.idx-eyebrow{color:#f87171;font-size:12px;letter-spacing:2px;font-weight:700}
+.subj-panel h2{color:#fafaf9;margin:2px 0 4px}
+.panel-sub{color:#a8a29e;font-size:14px}
+.subj-progress{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.prog-card{background:#292524;border-radius:12px;padding:12px 14px}
+.prog-label{font-size:13px;color:#d6d3d1}
+.prog-num{font-size:28px;font-weight:800;color:#fafaf9;line-height:1.2}
+.prog-num small{font-size:14px;font-weight:400;color:#a8a29e}
+.prog-bar{height:6px;background:#44403c;border-radius:6px;overflow:hidden;margin-top:8px}
+.prog-bar div{height:100%;background:#f59e0b}
+.ch-list{display:flex;flex-direction:column;gap:8px;margin:12px 0}
+.ch-row{display:flex;align-items:center;gap:10px;background:#292524;border:2px solid transparent;border-radius:12px;padding:10px 12px;cursor:pointer;text-align:left;width:100%;color:#f5f5f4;font:inherit}
+.ch-row:hover{border-color:#57534e}
+.ch-row.selected{border-color:#f59e0b;background:#44403c}
+.ch-num{flex:0 0 auto;background:var(--ch-color,#2563eb);color:#fff;border-radius:999px;padding:2px 10px;font-weight:700;font-size:13px;white-space:nowrap}
+.ch-mid{flex:1;min-width:0}
+.ch-mid b{display:block;font-size:15px}
+.ch-mid span{font-size:13px;color:#a8a29e}
+.ch-stars{color:#fbbf24;font-size:13px;white-space:nowrap}
+.ch-detail{background:#292524;border-radius:12px;padding:14px}
+.ch-detail h3{color:#fafaf9;margin-top:14px}
+.ch-detail h3:first-child{margin-top:0}
+.ch-detail ul{margin:6px 0;padding-left:20px}
+.ch-detail .btn{width:100%;margin:10px 0 0;padding:12px}
+.subj-panel a{color:#7dd3fc}
+.subj-panel .vids{border-top-color:#44403c}
+.subj-panel .pill{background:#44403c;color:#e7e5e4}

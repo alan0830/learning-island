@@ -1,0 +1,6 @@
+node_modules/
+data/app.db*
+data/app.db-*
+.local-data/
+.env
+.DS_Store

@@ -1,0 +1,21 @@
+services:
+  learning-island:
+    image: ${DOCKERHUB_USERNAME:-your-dockerhub-username}/learning-island:latest
+    container_name: learning-island
+    environment:
+      TZ: Asia/Taipei
+      PORT: 3000
+      DATA_DIR: /data
+      # 容器內以哪個身分跑 app（預設 node，uid 1000）。想用自己的 NAS 帳號跑，
+      # 填 `id` 查到的數字，例如 PUID=1026 PGID=100；entrypoint 會把 /data
+      # 改成該 uid/gid 擁有再降權執行，不用再遷就 1000。
+      PUID: ${PUID:-1000}
+      PGID: ${PGID:-1000}
+      ADMIN_USERNAME: ${ADMIN_USERNAME:-admin}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+      QUESTIONS_URL: ${QUESTIONS_URL:-}
+    ports:
+      - "${PORT:-8080}:3000"
+    volumes:
+      - ./data:/data
+    restart: unless-stopped

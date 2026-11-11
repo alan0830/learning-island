@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- 藍天碧海 -->
+  <circle cx="32" cy="32" r="30" fill="#7dd3fc"/>
+  <!-- 太陽 -->
+  <circle cx="50" cy="12" r="7" fill="#fde047"/>
+  <!-- 沙灘與海浪 -->
+  <path d="M4 48 Q12 44 20 48 T36 48 T52 48 T62 48 L62 62 L4 62 Z" fill="#38bdf8"/>
+  <!-- 綠色小島 -->
+  <ellipse cx="32" cy="44" rx="22" ry="10" fill="#4ade80"/>
+  <ellipse cx="32" cy="41" rx="15" ry="6" fill="#86efac"/>
+  <!-- 棕櫚樹 -->
+  <path d="M32 41 V25" stroke="#92400e" stroke-width="3" stroke-linecap="round"/>
+  <path d="M32 25 C26 18 19 18 15 22 C21 22 26 25 32 29 Z" fill="#22c55e"/>
+  <path d="M32 25 C38 18 45 18 49 22 C43 22 38 25 32 29 Z" fill="#16a34a"/>
+  <path d="M32 25 C30 17 32 12 37 10 C37 16 35 21 32 25 Z" fill="#4ade80"/>
+  <!-- 沙灘上的小石頭 -->
+  <circle cx="19" cy="45" r="2" fill="#f59e0b"/>
+  <circle cx="45" cy="46" r="2" fill="#f59e0b"/>
+</svg>

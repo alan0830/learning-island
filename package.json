@@ -1,0 +1,1 @@
+{"dependencies":{"bcrypt":"^6.0.0","better-sqlite3":"^12.0.0","express":"^4.21.2"},"description":"學習島：七年級翰林版自架練習 app（Node.js + Express + SQLite，單一 Docker 容器）","engines":{"node":">=20"},"main":"server.js","name":"docker-learning-island","private":true,"scripts":{"start":"node server.js","test":"node --test tests/test.js"},"type":"commonjs","version":"1.0.0"}

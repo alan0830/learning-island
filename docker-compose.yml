@@ -1,0 +1,25 @@
+services:
+  learning-island:
+    build: .
+    container_name: learning-island
+    ports:
+      - "8080:3000"
+    volumes:
+      - ./data:/data
+    environment:
+      - PORT=3000
+      - DATA_DIR=/data
+      # 容器內以哪個身分跑 app（預設 node，uid 1000）。想用自己的 NAS 帳號跑，
+      # 填 `id` 查到的數字，例如 PUID=1026 PGID=100；entrypoint 會把 /data
+      # 改成該 uid/gid 擁有再降權執行，不用再遷就 1000。
+      - PUID=${PUID:-1000}
+      - PGID=${PGID:-1000}
+      # 第一次登入的管理員帳號。ADMIN_PASSWORD 留空時，預設密碼為 changeme123，
+      # 請第一次登入後立即更改；建議直接在這裡填一個你自己的強密碼。
+      - ADMIN_USERNAME=${ADMIN_USERNAME:-admin}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-}
+      # 題庫來源（選填）：GitHub 上 questions.json 的 Raw 網址。
+      # 例如：https://raw.githubusercontent.com/alan0830/learning-island/main/data/questions.json
+      # 留空時，管理員可在網頁上手動輸入網址再按「檢查題庫更新」。
+      - QUESTIONS_URL=${QUESTIONS_URL:-}
+    restart: unless-stopped
