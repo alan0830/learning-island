@@ -414,9 +414,78 @@ app.get('/api/admin/dashboard', requireAuth, requireAdmin, (req, res) => {
     const total = db.prepare('SELECT COUNT(*) n, SUM(is_correct) c FROM attempts WHERE user_id=?').get(s.id);
     const recent = db.prepare(`SELECT a.question_id, a.chapter_id, a.concept, a.created_at, q.stem FROM attempts a JOIN questions q ON q.id=a.question_id WHERE a.user_id=? AND a.is_correct=0 ORDER BY a.created_at DESC LIMIT 10`).all(s.id);
     const ch30 = w.ch30.slice(0, 3);
-    return { ...s, total_attempts: total.n || 0, accuracy: total.n ? Math.round(((total.c || 0) / total.n) * 100) : null, wrong7: w.wrong7.length, top_error_chapters: ch30, repeated_concepts: w.concepts.slice(0, 5), recent_mistakes: recent };
+    const chStats = chapterStats(s.id);
+    const totalStars = chStats.reduce((a, c) => a + c.stars, 0);
+    return { ...s, total_attempts: total.n || 0, accuracy: total.n ? Math.round(((total.c || 0) / total.n) * 100) : null, total_stars: totalStars, wrong7: w.wrong7.length, top_error_chapters: ch30, repeated_concepts: w.concepts.slice(0, 5), recent_mistakes: recent };
   });
   res.json(out);
+});
+
+app.get('/api/admin/users/:id/detail', requireAuth, requireAdmin, (req, res) => {
+  const student = db.prepare("SELECT id, username, display_name, created_at FROM users WHERE id=? AND role='student'").get(req.params.id);
+  if (!student) return res.status(404).json({ error: '找不到學生帳號' });
+
+  const w = weaknessFor(student.id);
+  const total = db.prepare('SELECT COUNT(*) n, SUM(is_correct) c FROM attempts WHERE user_id=?').get(student.id);
+  const totalAttempts = total.n || 0;
+  const totalCorrect = total.c || 0;
+  const accuracy = totalAttempts ? Math.round((totalCorrect / totalAttempts) * 100) : null;
+
+  const rawAttempts = db.prepare(`
+    SELECT a.id, a.question_id, a.chapter_id, a.subject_id, a.concept, a.is_correct, a.created_at,
+           q.stem, q.options, q.answer, q.explanation
+    FROM attempts a
+    LEFT JOIN questions q ON q.id = a.question_id
+    WHERE a.user_id = ?
+    ORDER BY a.created_at DESC, a.id DESC
+    LIMIT 100
+  `).all(student.id);
+
+  const safeParse = (str) => {
+    if (!str) return [];
+    try { return JSON.parse(str); } catch { return []; }
+  };
+
+  const attempts = rawAttempts.map((r) => ({
+    ...r,
+    options: safeParse(r.options)
+  }));
+
+  const rawMistakes = db.prepare(`
+    SELECT a.question_id, a.chapter_id, a.subject_id, a.concept,
+           COUNT(*) as wrong_count,
+           MAX(a.created_at) as last_wrong_at,
+           q.stem, q.options, q.answer, q.explanation
+    FROM attempts a
+    LEFT JOIN questions q ON q.id = a.question_id
+    WHERE a.user_id = ? AND a.is_correct = 0
+    GROUP BY a.question_id
+    ORDER BY wrong_count DESC, last_wrong_at DESC
+  `).all(student.id);
+
+  const mistakes = rawMistakes.map((r) => ({
+    ...r,
+    options: safeParse(r.options)
+  }));
+
+  const chStats = chapterStats(student.id);
+  const totalStars = chStats.reduce((a, c) => a + c.stars, 0);
+
+  res.json({
+    student,
+    stats: {
+      total_attempts: totalAttempts,
+      total_correct: totalCorrect,
+      accuracy,
+      total_stars: totalStars,
+      wrong7: w.wrong7.length,
+      repeated_concepts: w.concepts.slice(0, 8),
+      top_error_chapters: w.ch30.slice(0, 5),
+      chapters: chStats
+    },
+    attempts,
+    mistakes
+  });
 });
 app.post('/api/admin/check-updates', requireAuth, requireAdmin, async (req, res) => {
   const url = ((req.body || {}).url || QUESTIONS_URL).trim();

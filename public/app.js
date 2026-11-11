@@ -618,7 +618,12 @@ async function finishQuiz() {
 
   const score = quizState.score;
   const total = quizState.questions.length;
-  const starsEarned = score >= 7 ? 3 : score >= 5 ? 2 : 1;
+  const ratio = total > 0 ? score / total : 0;
+  const starsEarned = ratio >= 0.8 ? 3 : ratio >= 0.5 ? 2 : ratio >= 0.25 ? 1 : 0;
+
+  if (window.Island3D && starsEarned >= 2) {
+    window.Island3D.celebrate(quizState.chapterId);
+  }
 
   // 重新獲取最新進度資料
   try {
@@ -861,66 +866,429 @@ async function renderAdminModal() {
     return;
   }
 
+  const totalStudents = dash.length;
+  const totalAttempts = dash.reduce((a, s) => a + (s.total_attempts || 0), 0);
+  const totalStars = dash.reduce((a, s) => a + (s.total_stars || 0), 0);
+  const totalWrong7 = dash.reduce((a, s) => a + (s.wrong7 || 0), 0);
+
   modalContainer.innerHTML = `
     <div class="modal-overlay" onclick="closeModal(event)">
-      <div class="modal-dialog" onclick="event.stopPropagation()">
+      <div class="modal-dialog modal-wide" onclick="event.stopPropagation()">
         <div class="modal-header">
-          <h2>👨‍👩‍👧 家長看板與管理中心</h2>
+          <div>
+            <h2 style="display:flex;align-items:center;gap:8px">
+              👨‍👩‍👧 家長看板與學習中心
+            </h2>
+            <p style="margin:4px 0 0;font-size:13px;color:#a8a29e">
+              即時掌握小朋友作答歷程、錯題分析、各科星星與弱點補強
+            </p>
+          </div>
           <button class="btn-nav-close" onclick="closeModal()">✕</button>
         </div>
 
+        <!-- 全體統計摘要列 -->
+        <div class="parent-summary-bar">
+          <div class="parent-summary-item">
+            <div class="num">${totalStudents}</div>
+            <div class="lbl">👨‍🎓 註冊學生</div>
+          </div>
+          <div class="parent-summary-item">
+            <div class="num">${totalAttempts}</div>
+            <div class="lbl">📝 累計作答題數</div>
+          </div>
+          <div class="parent-summary-item">
+            <div class="num">${totalStars}</div>
+            <div class="lbl">⭐ 全島累積星星</div>
+          </div>
+          <div class="parent-summary-item">
+            <div class="num" style="color:${totalWrong7 ? 'var(--bad)' : 'var(--good)'}">${totalWrong7}</div>
+            <div class="lbl">⚠️ 7天待加強錯題</div>
+          </div>
+        </div>
+
+        <!-- 學生學習卡片列表 -->
         <div class="study-card-block">
-          <h3>學生學習狀況總覽</h3>
-          ${dash.map(s => `
-            <div style="background:#1f1c1a;padding:12px;border-radius:10px;margin-bottom:8px">
-              <b>${esc(s.display_name)}（帳號：${esc(s.username)}）</b>
-              <div style="font-size:13px;color:#a8a29e;margin-top:4px">
-                作答數：${s.total_attempts} 題 · 答對率：${s.accuracy !== null ? s.accuracy + '%' : '—'} · 7天錯題：${s.wrong7} 題
+          <h3>👦 小朋友學習檔案與紀錄分析</h3>
+          ${dash.length ? dash.map(s => {
+            const initial = (s.display_name || s.username || '?').charAt(0).toUpperCase();
+            return `
+              <div class="student-card">
+                <div class="student-card-header">
+                  <div class="student-info-main">
+                    <div class="student-avatar">${esc(initial)}</div>
+                    <div class="student-name-block">
+                      <b>${esc(s.display_name)}</b>
+                      <span>（帳號：${esc(s.username)}）</span>
+                    </div>
+                  </div>
+                  <div class="student-card-actions">
+                    <button class="btn-primary" onclick="viewStudentDetail(${s.id})">
+                      🔍 查看使用記錄與錯題分析
+                    </button>
+                    <button class="btn-ghost" onclick="resetStudentPasswordPrompt(${s.id}, '${esc(s.display_name)}')">
+                      🔑 重設密碼
+                    </button>
+                    <button class="btn-danger" onclick="deleteStudent(${s.id}, '${esc(s.display_name)}')">
+                      🗑️ 刪除
+                    </button>
+                  </div>
+                </div>
+
+                <div class="student-metrics-grid">
+                  <div class="metric-pill">
+                    <div class="v">${s.total_attempts} 題</div>
+                    <div class="k">累計作答</div>
+                  </div>
+                  <div class="metric-pill">
+                    <div class="v">${s.accuracy !== null ? s.accuracy + '%' : '—'}</div>
+                    <div class="k">整體答對率</div>
+                  </div>
+                  <div class="metric-pill">
+                    <div class="v" style="color:var(--star)">★ ${s.total_stars || 0}</div>
+                    <div class="k">累積星星</div>
+                  </div>
+                  <div class="metric-pill">
+                    <div class="v" style="color:${s.wrong7 ? 'var(--bad)' : 'var(--good)'}">${s.wrong7} 題</div>
+                    <div class="k">近7天錯題</div>
+                  </div>
+                </div>
+
+                ${(s.repeated_concepts && s.repeated_concepts.length) || (s.top_error_chapters && s.top_error_chapters.length) ? `
+                  <div class="student-weak-tags">
+                    <b>⚠️ 待加強弱點：</b>
+                    ${(s.repeated_concepts || []).slice(0, 3).map(c => `
+                      <span class="tag">常錯觀念：${esc(c.concept)} (${c.wrong}次)</span>
+                    `).join('')}
+                    ${(s.top_error_chapters || []).slice(0, 2).map(c => {
+                      const ch = (content?.chapters || []).find(x => x.id === c.chapter_id);
+                      const title = ch ? String(ch.title).replace(/^第\s*\d+\s*章\s*/, '') : c.chapter_id;
+                      return `<span class="tag">錯誤率高：${esc(title)} (${Math.round(c.rate * 100)}%)</span>`;
+                    }).join('')}
+                  </div>
+                ` : ''}
               </div>
-              <div style="margin-top:8px">
-                <button class="btn-danger" onclick="deleteStudent(${s.id}, '${esc(s.display_name)}')">刪除帳號</button>
-              </div>
+            `;
+          }).join('') : `
+            <div style="text-align:center;padding:24px;color:#a8a29e">
+              目前尚未建立學生帳號，請在下方建立小朋友的第一個帳號！
             </div>
-          `).join('') || '<p style="color:#a8a29e">尚未建立學生帳號。</p>'}
+          `}
         </div>
 
+        <!-- 建立新學生帳號 -->
         <div class="study-card-block">
-          <h3>建立新學生帳號</h3>
-          <div class="form-group">
-            <label>帳號 (英文)</label>
-            <input class="form-input" id="new-stu-user" placeholder="例如：student1">
+          <h3>➕ 建立新學生帳號</h3>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:12px">
+            <div class="form-group" style="margin:0">
+              <label>帳號 (英文/數字)</label>
+              <input class="form-input" id="new-stu-user" placeholder="例如：student1">
+            </div>
+            <div class="form-group" style="margin:0">
+              <label>顯示名稱 (姓名或小名)</label>
+              <input class="form-input" id="new-stu-name" placeholder="例如：小明">
+            </div>
+            <div class="form-group" style="margin:0">
+              <label>登入密碼 (至少 6 碼)</label>
+              <input class="form-input" id="new-stu-pwd" type="password" placeholder="例如：123456">
+            </div>
           </div>
-          <div class="form-group">
-            <label>顯示名稱 (姓名)</label>
-            <input class="form-input" id="new-stu-name" placeholder="例如：小明">
-          </div>
-          <div class="form-group">
-            <label>密碼 (至少 6 碼)</label>
-            <input class="form-input" id="new-stu-pwd" type="password">
-          </div>
-          <button class="btn-primary" onclick="createStudent()">建立學生</button>
+          <button class="btn-primary" style="margin-top:12px" onclick="createStudent()">確認建立學生</button>
         </div>
 
+        <!-- 題庫管理 -->
         <div class="study-card-block">
-          <h3>題庫更新</h3>
-          <p style="font-size:13px;color:#a8a29e">目前版本：${esc(info.version)}，匯入時間：${esc(info.imported_at || '初次建庫')}</p>
-          <div class="form-group">
-            <label>題庫 raw JSON 網址</label>
+          <h3>🔄 題庫管理與線上更新</h3>
+          <p style="font-size:13px;color:#a8a29e;margin:0 0 10px">
+            目前版本：<b>版本 ${esc(info.version)}</b> · 匯入時間：${esc(info.imported_at || '系統初始建置')}
+          </p>
+          <div class="form-group" style="margin-bottom:8px">
+            <label>題庫 raw JSON 網址（可自訂 GitHub Raw 連結）</label>
             <input class="form-input" id="new-q-url" placeholder="留空使用預設來源">
           </div>
-          <button class="btn-ghost" onclick="checkUpdateQuestions()">檢查並更新題庫</button>
+          <button class="btn-ghost" onclick="checkUpdateQuestions()">檢查並更新題庫（不清除學生紀錄）</button>
         </div>
       </div>
     </div>
   `;
 }
 
+/* ================= 8. 學生詳細學習檔案視窗（使用記錄 + 錯題簿 + 各科進度） ================= */
+let currentDetailStudentId = null;
+let currentDetailTab = 'timeline';
+
+async function viewStudentDetail(studentId, tab = 'timeline') {
+  currentDetailStudentId = studentId;
+  currentDetailTab = tab;
+
+  let detail = null;
+  try {
+    detail = await api(`/api/admin/users/${studentId}/detail`);
+  } catch (e) {
+    alert(`取得學生資料失敗：${e.message}`);
+    return;
+  }
+
+  const { student, stats: sStats, attempts, mistakes } = detail;
+  const initial = (student.display_name || student.username || '?').charAt(0).toUpperCase();
+
+  const formatDt = (iso) => {
+    if (!iso) return '—';
+    try {
+      const d = new Date(iso);
+      const pad = (n) => String(n).padStart(2, '0');
+      return `${d.getFullYear()}/${pad(d.getMonth()+1)}/${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+    } catch {
+      return iso;
+    }
+  };
+
+  const chMap = new Map((content?.chapters || []).map(c => [c.id, c]));
+  const subMap = new Map((content?.subjects || []).map(s => [s.id, s]));
+
+  modalContainer.innerHTML = `
+    <div class="modal-overlay" onclick="closeModal(event)">
+      <div class="modal-dialog modal-wide" onclick="event.stopPropagation()">
+        <!-- 導航標頭 -->
+        <div class="detail-nav-header">
+          <div style="display:flex;align-items:center;gap:12px">
+            <button class="btn-ghost" onclick="renderAdminModal()" style="padding:6px 12px;font-size:13px">
+              ‹ 返回家長看板
+            </button>
+            <div style="display:flex;align-items:center;gap:8px">
+              <div class="student-avatar" style="width:34px;height:34px;font-size:15px">${esc(initial)}</div>
+              <div>
+                <b style="font-size:17px;color:#fff">${esc(student.display_name)}</b>
+                <span style="font-size:12px;color:#a8a29e;margin-left:4px">（帳號：${esc(student.username)}）</span>
+              </div>
+            </div>
+          </div>
+          <button class="btn-nav-close" onclick="closeModal()">✕</button>
+        </div>
+
+        <!-- 學生指標卡片列 -->
+        <div class="student-metrics-grid">
+          <div class="metric-pill">
+            <div class="v">${sStats.total_attempts} 題</div>
+            <div class="k">總作答題數</div>
+          </div>
+          <div class="metric-pill">
+            <div class="v">${sStats.accuracy !== null ? sStats.accuracy + '%' : '—'}</div>
+            <div class="k">整體答對率</div>
+          </div>
+          <div class="metric-pill">
+            <div class="v" style="color:var(--star)">★ ${sStats.total_stars || 0}</div>
+            <div class="k">全島星星</div>
+          </div>
+          <div class="metric-pill">
+            <div class="v" style="color:${mistakes.length ? 'var(--bad)' : 'var(--good)'}">
+              ${mistakes.length} 題
+            </div>
+            <div class="k">累計錯題簿</div>
+          </div>
+        </div>
+
+        <!-- 標籤切換 -->
+        <div class="detail-tabs">
+          <button class="detail-tab ${currentDetailTab === 'timeline' ? 'active' : ''}"
+                  onclick="viewStudentDetail(${studentId}, 'timeline')">
+            🕒 作答歷程時間軸 (${attempts.length} 筆)
+          </button>
+          <button class="detail-tab ${currentDetailTab === 'mistakes' ? 'active' : ''}"
+                  onclick="viewStudentDetail(${studentId}, 'mistakes')">
+            📕 錯題記錄清單與分析 (${mistakes.length} 題)
+          </button>
+          <button class="detail-tab ${currentDetailTab === 'subjects' ? 'active' : ''}"
+                  onclick="viewStudentDetail(${studentId}, 'subjects')">
+            📊 7 科進度與星星分布
+          </button>
+        </div>
+
+        <!-- 分頁 1：使用記錄時間軸 -->
+        ${currentDetailTab === 'timeline' ? `
+          <div class="timeline-list">
+            ${attempts.length ? attempts.map(a => {
+              const ch = chMap.get(a.chapter_id);
+              const sub = subMap.get(a.subject_id);
+              const chName = ch ? String(ch.title).replace(/^第\s*\d+\s*章\s*/, '') : a.chapter_id;
+              const subName = sub ? sub.title : a.subject_id;
+              const subColor = sub ? sub.color : '#f97316';
+              const isCorrect = a.is_correct === 1;
+
+              return `
+                <div class="timeline-card ${isCorrect ? 'correct' : 'wrong'}">
+                  <div class="timeline-meta">
+                    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+                      <span class="timeline-badge ${isCorrect ? 'good' : 'bad'}">
+                        ${isCorrect ? '✅ 答對' : '❌ 答錯'}
+                      </span>
+                      <span style="background:${subColor};color:#fff;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700">
+                        ${esc(subName)}
+                      </span>
+                      <span class="timeline-chapter">${esc(chName)}</span>
+                      ${a.concept ? `<span style="color:#a8a29e">· 觀念：${esc(a.concept)}</span>` : ''}
+                    </div>
+                    <span class="timeline-time">${formatDt(a.created_at)}</span>
+                  </div>
+
+                  <div class="timeline-stem">
+                    <b>題目：</b>${esc(a.stem || '（無題幹資料）')}
+                  </div>
+
+                  ${!isCorrect ? `
+                    <div class="timeline-expl">
+                      <div><b>💡 正確答案：</b>${typeof a.answer === 'number' && a.options && a.options[a.answer] ? `(${'ABCD'[a.answer]}) ${esc(a.options[a.answer])}` : '詳見解析'}</div>
+                      <div style="margin-top:4px"><b>解析：</b>${esc(a.explanation || '暫無解析')}</div>
+                    </div>
+                  ` : ''}
+                </div>
+              `;
+            }).join('') : `
+              <div style="text-align:center;padding:36px;color:#a8a29e">
+                尚無作答紀錄。小朋友開始在島嶼中闖關答題後，這裡會即時記錄每一次的作答歷程與時間！
+              </div>
+            `}
+          </div>
+        ` : ''}
+
+        <!-- 分頁 2：錯題記錄清單與分析 -->
+        ${currentDetailTab === 'mistakes' ? `
+          <div class="mistake-list">
+            ${sStats.repeated_concepts && sStats.repeated_concepts.length ? `
+              <div class="student-weak-tags" style="background:#271816;border-color:#7f1d1d">
+                <b style="color:#fca5a5">⚠️ 重複犯錯的觀念排行：</b>
+                ${sStats.repeated_concepts.map(c => `
+                  <span class="tag">觀念【${esc(c.concept)}】· 錯 ${c.wrong} 次</span>
+                `).join('')}
+              </div>
+            ` : ''}
+
+            ${mistakes.length ? mistakes.map(m => {
+              const ch = chMap.get(m.chapter_id);
+              const sub = subMap.get(m.subject_id);
+              const chName = ch ? String(ch.title).replace(/^第\s*\d+\s*章\s*/, '') : m.chapter_id;
+              const subName = sub ? sub.title : m.subject_id;
+              const subColor = sub ? sub.color : '#f97316';
+
+              return `
+                <div class="mistake-card">
+                  <div class="mistake-header">
+                    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+                      <span class="mistake-count-badge">
+                        ⚠️ 累計答錯 ${m.wrong_count} 次
+                      </span>
+                      <span style="background:${subColor};color:#fff;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700">
+                        ${esc(subName)}
+                      </span>
+                      <span style="color:#fb923c;font-weight:600;font-size:13px">${esc(chName)}</span>
+                      ${m.concept ? `<span style="color:#a8a29e;font-size:12px">· 觀念：${esc(m.concept)}</span>` : ''}
+                    </div>
+                    <span style="color:#78716c;font-size:12px">最近錯於：${formatDt(m.last_wrong_at)}</span>
+                  </div>
+
+                  <div style="font-size:14px;color:#fff;line-height:1.5">
+                    <b>題幹：</b>${esc(m.stem || '（無題幹資料）')}
+                  </div>
+
+                  ${Array.isArray(m.options) && m.options.length ? `
+                    <div class="mistake-options-grid">
+                      ${m.options.map((opt, i) => {
+                        const isAns = i === m.answer;
+                        return `
+                          <div class="mistake-opt-item ${isAns ? 'is-answer' : ''}">
+                            <span style="font-weight:700">${'ABCD'[i]}.</span>
+                            <span>${esc(opt)}</span>
+                            ${isAns ? '<span style="margin-left:auto;font-size:12px">✓ 正確答案</span>' : ''}
+                          </div>
+                        `;
+                      }).join('')}
+                    </div>
+                  ` : ''}
+
+                  <div class="timeline-expl">
+                    <b>💡 觀念剖析與正解：</b>
+                    <p style="margin:4px 0 0;color:#e7e5e4">${esc(m.explanation || '暫無解析')}</p>
+                  </div>
+                </div>
+              `;
+            }).join('') : `
+              <div style="text-align:center;padding:36px;color:#a8a29e">
+                🎉 太棒了！該學生目前沒有任何錯題記錄。
+              </div>
+            `}
+          </div>
+        ` : ''}
+
+        <!-- 分頁 3：7 科進度與星星分布 -->
+        ${currentDetailTab === 'subjects' ? `
+          <div class="subject-stat-grid">
+            ${(content?.subjects || []).map(s => {
+              const chs = (sStats.chapters || []).filter(c => c.subject_id === s.id);
+              const stars = chs.reduce((a, c) => a + (c.stars || 0), 0);
+              const maxStars = chs.length * 3;
+              const mastered = chs.reduce((a, c) => a + (c.mastered || 0), 0);
+              const totalQ = chs.reduce((a, c) => a + (c.total_questions || 12), 0);
+              const attempts = chs.reduce((a, c) => a + (c.attempts || 0), 0);
+              const accuracy = attempts ? Math.round((chs.reduce((a, c) => a + (c.accuracy ? (c.accuracy * c.attempts / 100) : 0), 0) / attempts)) : null;
+              const pct = totalQ ? Math.round((mastered / totalQ) * 100) : 0;
+
+              return `
+                <div class="subject-stat-card" style="border-top:3px solid ${s.color}">
+                  <div class="subject-stat-top">
+                    <b>${s.icon} ${esc(s.title)}島</b>
+                    <span>★ ${stars} / ${maxStars}</span>
+                  </div>
+                  <div style="font-size:12px;color:#a8a29e">
+                    共 ${chs.length} 章 · 已掌握 ${mastered} / ${totalQ} 題 (${pct}%)
+                  </div>
+                  <div class="prog-bar-slim" style="margin:4px 0">
+                    <div style="width:${pct}%;background:${s.color}"></div>
+                  </div>
+                  <div style="font-size:12px;color:#d6d3d1;display:flex;justify-content:space-between;margin-top:2px">
+                    <span>作答數：${attempts} 題</span>
+                    <span>答對率：${accuracy !== null ? accuracy + '%' : '—'}</span>
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        ` : ''}
+      </div>
+    </div>
+  `;
+}
+
+async function resetStudentPasswordPrompt(id, name) {
+  const newPwd = prompt(`請輸入為「${name}」設定的新密碼（至少 6 碼）：`);
+  if (!newPwd) return;
+  if (newPwd.length < 6) {
+    alert('密碼至少需要 6 個字元！');
+    return;
+  }
+  try {
+    await api(`/api/admin/users/${id}/reset-password`, {
+      method: 'POST',
+      body: JSON.stringify({ password: newPwd })
+    });
+    alert(`密碼重設成功！學生下次登入請使用新密碼。`);
+  } catch (e) {
+    alert(`重設失敗：${e.message}`);
+  }
+}
+
 async function createStudent() {
   const u = document.getElementById('new-stu-user').value.trim();
   const d = document.getElementById('new-stu-name').value.trim();
   const p = document.getElementById('new-stu-pwd').value.trim();
+  if (!u || !p) {
+    alert('請填寫帳號與密碼！');
+    return;
+  }
+  if (p.length < 6) {
+    alert('密碼至少需要 6 個字元！');
+    return;
+  }
   try {
-    await api('/api/admin/users', { method: 'POST', body: JSON.stringify({ username: u, display_name: d, password: p }) });
+    await api('/api/admin/users', { method: 'POST', body: JSON.stringify({ username: u, display_name: d || u, password: p }) });
     alert('學生帳號建立成功！');
     renderAdminModal();
   } catch (e) {
@@ -943,6 +1311,12 @@ async function checkUpdateQuestions() {
   const url = document.getElementById('new-q-url').value.trim();
   try {
     const res = await api('/api/admin/check-updates', { method: 'POST', body: JSON.stringify({ url }) });
+    alert(`題庫更新完成！版本 ${res.version}，保留 ${res.attempts_preserved} 筆學生作答。`);
+    location.reload();
+  } catch (e) {
+    alert(e.message);
+  }
+}
     alert(`題庫更新完成！版本 ${res.version}，保留 ${res.attempts_preserved} 筆學生作答。`);
     location.reload();
   } catch (e) {

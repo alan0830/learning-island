@@ -74,3 +74,4 @@ const compiled = {
 
 fs.writeFileSync(originalPath, JSON.stringify(compiled, null, 2), 'utf8');
 console.log('Successfully compiled data/questions.json with 25 chapters and 300 questions!');
+

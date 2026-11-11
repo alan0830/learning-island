@@ -143,6 +143,12 @@ test('家長看板與題庫更新不清除紀錄', async () => {
   assert.equal(dash.status, 200);
   assert.ok(dash.json.some((s) => s.username === 'student1'));
   assert.ok(dash.json[0].recent_mistakes.length >= 1);
+  const s1 = dash.json.find((s) => s.username === 'student1');
+  const detail = await call(`/api/admin/users/${s1.id}/detail`);
+  assert.equal(detail.status, 200);
+  assert.ok(Array.isArray(detail.json.attempts) && detail.json.attempts.length >= 1, '應有學生作答歷程記錄');
+  assert.ok(Array.isArray(detail.json.mistakes) && detail.json.mistakes.length >= 1, '應有學生錯題記錄');
+  assert.ok(detail.json.stats.total_attempts >= 1);
   const before = await call('/api/me/stats').catch(() => null);
   // 未設定 QUESTIONS_URL 時，檢查更新應失敗且不更動紀錄
   const up = await call('/api/admin/check-updates', { method: 'POST', body: JSON.stringify({}) });
