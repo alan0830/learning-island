@@ -464,7 +464,7 @@ function renderDrawerStudy(chapterId) {
 
     <!-- 闖關挑戰按鈕 -->
     <button class="btn-action-quiz" onclick="startQuiz('${ch.id}')">
-      開始挑戰・8 題闖關
+      開始挑戰・${ch.total_questions || 12} 題闖關
     </button>
 
     <!-- 影音延伸資源 -->
