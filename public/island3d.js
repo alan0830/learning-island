@@ -9,6 +9,7 @@
   let animId = null, clock = null;
   let hubGroup = null, islandGroups = [], boatGroup = null;
   let camGoal = null;
+  let celebrateId = null, celebrateTime = -1;
   let defaultCam = { pos: null, tgt: null };
   let currentSubject = null, currentChapters = [], currentStats = null;
   let selectCallback = null, paperCallback = null;
@@ -525,6 +526,20 @@
       boatGroup.rotation.y = -angle + Math.PI;
     }
 
+    // 慶祝過關動態效果 (小島歡慶跳躍)
+    if (celebrateTime >= 0) {
+      celebrateTime += delta;
+      const g = islandGroups.find(x => x.userData.chapterId === celebrateId);
+      if (g) {
+        g.position.y = Math.sin(celebrateTime * 10) * Math.max(0, 1 - celebrateTime / 2.2) * 1.4;
+      }
+      if (celebrateTime > 2.2) {
+        if (g) g.position.y = 0;
+        celebrateTime = -1;
+        celebrateId = null;
+      }
+    }
+
     // 鏡頭平滑插值聚焦
     if (camGoal) {
       camera.position.lerp(camGoal.pos, 0.08);
@@ -578,11 +593,18 @@
     }
   }
 
+  function celebrate(chapterId) {
+    celebrateId = chapterId;
+    celebrateTime = 0;
+    focusChapter(chapterId);
+  }
+
   global.Island3D = {
     init,
     buildArchipelago,
     focusChapter,
     resetView,
+    celebrate,
     destroy
   };
 })(window);
