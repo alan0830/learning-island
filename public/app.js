@@ -1342,12 +1342,6 @@ async function checkUpdateQuestions() {
     alert(e.message);
   }
 }
-    alert(`題庫更新完成！版本 ${res.version}，保留 ${res.attempts_preserved} 筆學生作答。`);
-    location.reload();
-  } catch (e) {
-    alert(e.message);
-  }
-}
 
 function renderUserMenuModal() {
   modalContainer.innerHTML = `
