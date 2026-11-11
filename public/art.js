@@ -111,6 +111,27 @@ const SUBJECT_ART = {
     <path d="M86 56 a10 6 0 0 0 20 0 z" fill="#f6e05e" stroke="#2d3748" stroke-width="2"/>
     <!-- 象徵和諧的愛心標誌 -->
     <path d="M70 20 c-3-4 -7-2 -7 2 c0 4 7 8 7 8 s7-4 7-8 c0-4 -4-6 -7-2 z" fill="#ed64a6"/>
+  `,
+
+  // Patty 英文特訓：英檢徽章、大寫字母 P、學士帽與金星
+  patty: `
+    <defs>
+      <linearGradient id="patty-grad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#4f46e5"/>
+        <stop offset="100%" stop-color="#7c3aed"/>
+      </linearGradient>
+    </defs>
+    <!-- 紫色圓形金邊徽章 -->
+    <circle cx="70" cy="56" r="24" fill="url(#patty-grad)" stroke="#f59e0b" stroke-width="2.5"/>
+    <!-- 字母 P -->
+    <text x="70" y="67" font-family="'Fredoka', 'Nunito', 'Arial', sans-serif" font-weight="900" font-size="30" fill="#ffffff" text-anchor="middle">P</text>
+    <!-- 學士帽 -->
+    <polygon points="50,32 70,23 90,32 70,41" fill="#1e1b4b" stroke="#f59e0b" stroke-width="1.5"/>
+    <path d="M90 32 v11" stroke="#f59e0b" stroke-width="1.5"/>
+    <circle cx="90" cy="43" r="2" fill="#f59e0b"/>
+    <!-- 裝飾小金星 -->
+    <text x="98" y="50" font-size="12" fill="#fbbf24">★</text>
+    <text x="38" y="60" font-size="10" fill="#fbbf24">★</text>
   `
 };
 

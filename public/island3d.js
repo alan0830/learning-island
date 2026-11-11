@@ -24,7 +24,8 @@
     bio:  { water: 0x1b546a, grass: 0x65be6b, sand: 0xe4d3a6, accent: 0x10b981 },
     his:  { water: 0x22495a, grass: 0x8ea862, sand: 0xdec699, accent: 0xd97706 },
     geo:  { water: 0x165575, grass: 0x72c27c, sand: 0xe7d7b0, accent: 0x06b6d4 },
-    civ:  { water: 0x20456c, grass: 0x7db57d, sand: 0xe5d0a6, accent: 0x8b5cf6 }
+    civ:  { water: 0x20456c, grass: 0x7db57d, sand: 0xe5d0a6, accent: 0x8b5cf6 },
+    patty:{ water: 0x1d265a, grass: 0x6366f1, sand: 0xdcd6f7, accent: 0x4f46e5 }
   };
 
   function createHexMesh(radiusTop, radiusBot, height, grassColor, sandColor) {

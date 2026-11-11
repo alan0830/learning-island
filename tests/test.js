@@ -39,11 +39,11 @@ before(async () => {
 });
 after(() => { proc && proc.kill(); });
 
-test('題庫匯入：7 科 25 章 300 題', async () => {
+test('題庫匯入：8 科 33 章 396 題', async () => {
   const r = await call('/api/content');
   assert.equal(r.status, 200);
-  assert.equal(r.json.subjects.length, 7);
-  assert.equal(r.json.chapters.length, 25);
+  assert.equal(r.json.subjects.length, 8);
+  assert.equal(r.json.chapters.length, 33);
   const total = r.json.chapters.reduce((a, c) => a, 0);
   assert.ok(total === 0 || true);
   // 題數用測驗章節驗證：每章 12 題
@@ -82,7 +82,7 @@ test('管理員建立學生、學生登入、作答、錯題本', async () => {
   }
   const stats = await call('/api/me/stats');
   assert.ok(stats.json.total_attempts >= 2);
-  assert.ok(Array.isArray(stats.json.chapters) && stats.json.chapters.length === 25);
+  assert.ok(Array.isArray(stats.json.chapters) && stats.json.chapters.length === 33);
 });
 
 test('弱點引擎用真實日期：回溯作答後 7 天／30 天要算得到', async () => {
@@ -154,7 +154,7 @@ test('家長看板與題庫更新不清除紀錄', async () => {
   const up = await call('/api/admin/check-updates', { method: 'POST', body: JSON.stringify({}) });
   assert.equal(up.status, 400);
   const info = await call('/api/admin/questions-info');
-  assert.equal(info.json.version, '3');
+  assert.equal(info.json.version, '4');
 });
 
 test('影音教學資源：10 座島共 42 個，連結皆為 https', async () => {

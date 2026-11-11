@@ -30,7 +30,7 @@ const api = async (path, opts = {}) => {
 
 const starsStr = (n) => '★'.repeat(n) + '☆'.repeat(3 - n);
 
-function speak(text, btn) {
+function speak(text, btn, lang) {
   if (!('speechSynthesis' in window)) {
     alert('您的瀏覽器不支援語音朗讀功能');
     return;
@@ -38,8 +38,9 @@ function speak(text, btn) {
   window.speechSynthesis.cancel();
   const clean = String(text || '').replace(/<[^>]+>/g, '').replace(/[•·*]/g, '');
   const u = new SpeechSynthesisUtterance(clean);
-  u.lang = 'zh-TW';
-  u.rate = 0.95;
+  const isPureEnglish = /^[A-Za-z\s.,?!'’"\d/-]+$/.test(clean.trim());
+  u.lang = lang || (isPureEnglish ? 'en-US' : 'zh-TW');
+  u.rate = isPureEnglish ? 0.9 : 0.95;
   if (btn) {
     btn.classList.add('speaking');
     u.onend = () => btn.classList.remove('speaking');
@@ -378,6 +379,30 @@ function renderDrawerIndex() {
       <button class="drawer-tab ${drawerTab === 'island' ? 'active' : ''}" onclick="renderDrawerIndex()">島嶼學習</button>
       <button class="drawer-tab ${drawerTab === 'paper' ? 'active' : ''}" onclick="openPaperDrawer()">會考小船 / 複習試卷</button>
     </div>
+
+    ${currentSubject.id === 'patty' ? `
+      <!-- Patty 英文特訓專區工具箱 -->
+      <div class="patty-hub-banner">
+        <div class="patty-hub-title">
+          <b>🎓 Patty 英文實戰特訓中心</b>
+          <span class="patty-hub-badge">全功能整合</span>
+        </div>
+        <p class="patty-hub-desc">
+          完整整合 pattyexam.netlify.app 內容：1,431 翰林全單字、1,233 康軒單字、866 會考歷屆試題單字、全套文法學習單與閃卡練習。
+        </p>
+        <div class="patty-hub-actions">
+          <button class="btn-patty-pri" onclick="openPattyDictionary()">
+            🔍 單字檢索字典
+          </button>
+          <button class="btn-patty-sec" onclick="openPattyFlashcards()">
+            🗂️ 單字閃卡練習
+          </button>
+          <button class="btn-patty-sec" onclick="openPattyGrammarManual()">
+            📖 翰林六冊文法手冊
+          </button>
+        </div>
+      </div>
+    ` : ''}
 
     <!-- 章節列表卡片 -->
     <div class="drawer-ch-list">
@@ -1425,6 +1450,317 @@ async function logout() {
 function closeModal(event) {
   if (event && event.target && !event.target.classList.contains('modal-overlay')) return;
   modalContainer.innerHTML = '';
+}
+
+/* ================= 9. PATTY 英文實戰特訓中心互動工具 ================= */
+function loadPattyScript(src) {
+  return new Promise((resolve) => {
+    if (document.querySelector(`script[src="${src}"]`)) return resolve();
+    const s = document.createElement('script');
+    s.src = src;
+    s.onload = () => resolve();
+    s.onerror = () => resolve();
+    document.head.appendChild(s);
+  });
+}
+
+let pattyAllWords = null;
+let currentDictFilter = 'all';
+let currentFlashcardSet = 'hl_1';
+let currentFlashcardIdx = 0;
+let currentFlashcardFlipped = false;
+
+async function ensurePattyWords() {
+  if (pattyAllWords) return pattyAllWords;
+  await Promise.all([
+    loadPattyScript('/patty/hl_words.js'),
+    loadPattyScript('/patty/kx_words.js'),
+    loadPattyScript('/patty/cap_words.js')
+  ]);
+
+  const list = [];
+  // 翰林
+  if (window.HL_WORDS) {
+    for (const vol of Object.keys(window.HL_WORDS)) {
+      for (const it of window.HL_WORDS[vol]) {
+        list.push({
+          word: it.w,
+          pos: it.p,
+          zh: it.m,
+          srcGroup: 'hl',
+          src: `翰林 B${vol} U${it.u || ''}`,
+          context: ''
+        });
+      }
+    }
+  }
+  // 康軒
+  if (Array.isArray(window.KX_WORDS)) {
+    for (const it of window.KX_WORDS) {
+      list.push({
+        word: it.word,
+        pos: it.pos,
+        zh: it.zh,
+        srcGroup: 'kx',
+        src: `康軒 ${it.name || ''} ${it.lesson || ''}`,
+        context: ''
+      });
+    }
+  }
+  // 會考
+  if (Array.isArray(window.CAP_WORDS)) {
+    for (const it of window.CAP_WORDS) {
+      list.push({
+        word: it.word,
+        pos: it.pos,
+        zh: it.zh,
+        srcGroup: 'cap',
+        src: `國中會考高頻 (出現 ${it.count || 1} 次)`,
+        context: it.context || ''
+      });
+    }
+  }
+
+  pattyAllWords = list;
+  return pattyAllWords;
+}
+
+// 1. Patty 單字檢索字典
+async function openPattyDictionary(filter = 'all') {
+  currentDictFilter = filter;
+  await ensurePattyWords();
+
+  modalContainer.innerHTML = `
+    <div class="modal-overlay" onclick="closeModal(event)">
+      <div class="modal-dialog modal-wide" onclick="event.stopPropagation()">
+        <div class="modal-header">
+          <div>
+            <h2 style="display:flex;align-items:center;gap:8px">
+              🔍 Patty 國中英語全能字典（3,500+ 單字）
+            </h2>
+            <p style="margin:4px 0 0;font-size:13px;color:#a8a29e">
+              整合翰林 B1-B6 (1,431字)、康軒 (1,233字) 與會考歷屆考題 (866字)
+            </p>
+          </div>
+          <button class="btn-nav-close" onclick="closeModal()">✕</button>
+        </div>
+
+        <div class="dict-search-box">
+          <input class="dict-search-input" id="patty-dict-kw"
+                 placeholder="輸入英文單字或中文意思，例如：people、delicious、蘋果..."
+                 oninput="onSearchPattyDict()">
+          <button class="btn-primary" onclick="onSearchPattyDict()">搜尋</button>
+        </div>
+
+        <div class="dict-filter-chips">
+          <button class="chip-btn ${currentDictFilter === 'all' ? 'active' : ''}" onclick="openPattyDictionary('all')">全部 (${pattyAllWords.length})</button>
+          <button class="chip-btn ${currentDictFilter === 'hl' ? 'active' : ''}" onclick="openPattyDictionary('hl')">翰林全冊 (1,431)</button>
+          <button class="chip-btn ${currentDictFilter === 'kx' ? 'active' : ''}" onclick="openPattyDictionary('kx')">康軒全冊 (1,233)</button>
+          <button class="chip-btn ${currentDictFilter === 'cap' ? 'active' : ''}" onclick="openPattyDictionary('cap')">會考高頻 (866)</button>
+        </div>
+
+        <div class="dict-results-container" id="patty-dict-list">
+          ${renderPattyDictItems(pattyAllWords.filter(w => currentDictFilter === 'all' || w.srcGroup === currentDictFilter).slice(0, 50))}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function onSearchPattyDict() {
+  const kw = (document.getElementById('patty-dict-kw')?.value || '').trim().toLowerCase();
+  const listEl = document.getElementById('patty-dict-list');
+  if (!listEl || !pattyAllWords) return;
+
+  const filtered = pattyAllWords.filter(w => {
+    if (currentDictFilter !== 'all' && w.srcGroup !== currentDictFilter) return false;
+    if (!kw) return true;
+    return String(w.word || '').toLowerCase().includes(kw) || String(w.zh || '').includes(kw);
+  }).slice(0, 60);
+
+  listEl.innerHTML = renderPattyDictItems(filtered);
+}
+
+function renderPattyDictItems(items) {
+  if (!items || items.length === 0) {
+    return `<div style="text-align:center;padding:32px;color:#a8a29e">找不到符合的單字，請嘗試其他關鍵字。</div>`;
+  }
+  return items.map(w => `
+    <div class="dict-item-card">
+      <div class="dict-item-left">
+        <div class="dict-item-word">
+          <b>${esc(w.word)}</b>
+          ${w.pos ? `<span class="dict-pos-tag">${esc(w.pos)}</span>` : ''}
+          <span class="dict-src-tag">${esc(w.src)}</span>
+        </div>
+        <div class="dict-item-zh">${esc(w.zh)}</div>
+        ${w.context ? `<div class="dict-item-context">例：${esc(w.context)}</div>` : ''}
+      </div>
+      <button class="say-btn" onclick="speak('${esc(w.word)}', this, 'en-US')" title="朗讀發音">
+        🔊
+      </button>
+    </div>
+  `).join('');
+}
+
+// 2. Patty 單字閃卡練習
+async function openPattyFlashcards(setName = 'hl_1') {
+  currentFlashcardSet = setName;
+  currentFlashcardIdx = 0;
+  currentFlashcardFlipped = false;
+  await ensurePattyWords();
+
+  renderFlashcardModal();
+}
+
+function getFlashcardPool(setName) {
+  if (!pattyAllWords) return [];
+  if (setName.startsWith('hl_')) {
+    const vol = setName.replace('hl_', '');
+    if (window.HL_WORDS && window.HL_WORDS[vol]) {
+      return window.HL_WORDS[vol].map(it => ({
+        word: it.w,
+        pos: it.p,
+        zh: it.m,
+        src: `翰林 B${vol} U${it.u || ''}`
+      }));
+    }
+  }
+  if (setName === 'cap') {
+    return (window.CAP_WORDS || []).map(it => ({
+      word: it.word,
+      pos: it.pos,
+      zh: it.zh,
+      src: `國中會考歷屆考題 (出現 ${it.count || 1} 次)`,
+      context: it.context || ''
+    }));
+  }
+  if (setName === 'kx') {
+    return (window.KX_WORDS || []).slice(0, 150).map(it => ({
+      word: it.word,
+      pos: it.pos,
+      zh: it.zh,
+      src: `康軒 ${it.name || ''}`
+    }));
+  }
+  return pattyAllWords.slice(0, 100);
+}
+
+function renderFlashcardModal() {
+  const pool = getFlashcardPool(currentFlashcardSet);
+  const total = pool.length;
+  if (currentFlashcardIdx >= total) currentFlashcardIdx = 0;
+  if (currentFlashcardIdx < 0) currentFlashcardIdx = total - 1;
+  const current = pool[currentFlashcardIdx] || { word: 'None', pos: '', zh: '', src: '' };
+
+  modalContainer.innerHTML = `
+    <div class="modal-overlay" onclick="closeModal(event)">
+      <div class="modal-dialog" onclick="event.stopPropagation()">
+        <div class="modal-header">
+          <div>
+            <h2 style="display:flex;align-items:center;gap:8px">🗂️ Patty 單字閃卡記憶</h2>
+            <p style="margin:4px 0 0;font-size:13px;color:#a8a29e">點擊卡片翻面背單字，訓練英中反射神經</p>
+          </div>
+          <button class="btn-nav-close" onclick="closeModal()">✕</button>
+        </div>
+
+        <div class="dict-filter-chips">
+          <button class="chip-btn ${currentFlashcardSet === 'hl_1' ? 'active' : ''}" onclick="openPattyFlashcards('hl_1')">翰林七上 (B1)</button>
+          <button class="chip-btn ${currentFlashcardSet === 'hl_2' ? 'active' : ''}" onclick="openPattyFlashcards('hl_2')">翰林七下 (B2)</button>
+          <button class="chip-btn ${currentFlashcardSet === 'hl_3' ? 'active' : ''}" onclick="openPattyFlashcards('hl_3')">翰林八上 (B3)</button>
+          <button class="chip-btn ${currentFlashcardSet === 'hl_4' ? 'active' : ''}" onclick="openPattyFlashcards('hl_4')">翰林八下 (B4)</button>
+          <button class="chip-btn ${currentFlashcardSet === 'cap' ? 'active' : ''}" onclick="openPattyFlashcards('cap')">會考高頻單字</button>
+          <button class="chip-btn ${currentFlashcardSet === 'kx' ? 'active' : ''}" onclick="openPattyFlashcards('kx')">康軒精選</button>
+        </div>
+
+        <div class="flashcard-wrapper">
+          <div class="flashcard-box" onclick="toggleFlashcardFlip()">
+            <div style="font-size:12px;color:#818cf8;margin-bottom:6px">
+              ${esc(current.src)} · ${currentFlashcardIdx + 1} / ${total}
+            </div>
+            <div class="flashcard-word">${esc(current.word)}</div>
+            ${current.pos ? `<div class="flashcard-sub">${esc(current.pos)}</div>` : ''}
+
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+              <button class="say-btn" onclick="event.stopPropagation(); speak('${esc(current.word)}', this, 'en-US')">
+                🔊 聽發音
+              </button>
+            </div>
+
+            ${currentFlashcardFlipped ? `
+              <div class="flashcard-zh">${esc(current.zh)}</div>
+              ${current.context ? `<div class="dict-item-context" style="margin-top:8px">${esc(current.context)}</div>` : ''}
+              <div class="flashcard-tip">（點擊卡片翻回正面）</div>
+            ` : `
+              <div class="flashcard-tip">👉 點擊卡片查看中文意思</div>
+            `}
+          </div>
+
+          <div class="flashcard-nav">
+            <button class="btn-ghost" onclick="prevFlashcard()">‹ 上一個</button>
+            <button class="btn-primary" onclick="toggleFlashcardFlip()">
+              ${currentFlashcardFlipped ? '翻回正面' : '翻面看中文'}
+            </button>
+            <button class="btn-ghost" onclick="nextFlashcard()">下一個 ›</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function toggleFlashcardFlip() {
+  currentFlashcardFlipped = !currentFlashcardFlipped;
+  renderFlashcardModal();
+}
+
+function nextFlashcard() {
+  currentFlashcardIdx++;
+  currentFlashcardFlipped = false;
+  renderFlashcardModal();
+}
+
+function prevFlashcard() {
+  currentFlashcardIdx--;
+  currentFlashcardFlipped = false;
+  renderFlashcardModal();
+}
+
+// 3. Patty 翰林六冊文法手冊
+let currentGrammarVol = 1;
+
+async function openPattyGrammarManual(vol = 1) {
+  currentGrammarVol = vol;
+  await loadPattyScript('/patty/hl_grammar.js');
+
+  const contentHtml = (window.HL_GRAMMAR && window.HL_GRAMMAR[currentGrammarVol]) || '<p>尚無該冊文法資料。</p>';
+
+  modalContainer.innerHTML = `
+    <div class="modal-overlay" onclick="closeModal(event)">
+      <div class="modal-dialog modal-wide" onclick="event.stopPropagation()">
+        <div class="modal-header">
+          <div>
+            <h2 style="display:flex;align-items:center;gap:8px">📖 翰林 B1–B6 完整文法手冊</h2>
+            <p style="margin:4px 0 0;font-size:13px;color:#a8a29e">來自 Patty 整理之文法活動學習單，涵蓋六冊句型、規則與例句</p>
+          </div>
+          <button class="btn-nav-close" onclick="closeModal()">✕</button>
+        </div>
+
+        <div class="dict-filter-chips">
+          <button class="chip-btn ${currentGrammarVol === 1 ? 'active' : ''}" onclick="openPattyGrammarManual(1)">B1（七上）</button>
+          <button class="chip-btn ${currentGrammarVol === 2 ? 'active' : ''}" onclick="openPattyGrammarManual(2)">B2（七下）</button>
+          <button class="chip-btn ${currentGrammarVol === 3 ? 'active' : ''}" onclick="openPattyGrammarManual(3)">B3（八上）</button>
+          <button class="chip-btn ${currentGrammarVol === 4 ? 'active' : ''}" onclick="openPattyGrammarManual(4)">B4（八下）</button>
+          <button class="chip-btn ${currentGrammarVol === 5 ? 'active' : ''}" onclick="openPattyGrammarManual(5)">B5（九上）</button>
+          <button class="chip-btn ${currentGrammarVol === 6 ? 'active' : ''}" onclick="openPattyGrammarManual(6)">B6（九下）</button>
+        </div>
+
+        <div class="patty-grammar-body">
+          ${contentHtml}
+        </div>
+      </div>
+    </div>
+  `;
 }
 
 // 啟動執行

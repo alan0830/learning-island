@@ -13,7 +13,8 @@ const modules = [
   require('./data/bio'),
   require('./data/his'),
   require('./data/geo'),
-  require('./data/civ')
+  require('./data/civ'),
+  require('./data/patty')
 ];
 
 const allChapters = [];
@@ -27,12 +28,12 @@ for (const mod of modules) {
 console.log(`Gathered ${allChapters.length} chapters and ${allQuestions.length} questions.`);
 
 // Validation
-if (allChapters.length !== 25) {
-  throw new Error(`Expected 25 chapters, got ${allChapters.length}`);
+if (allChapters.length !== 33) {
+  throw new Error(`Expected 33 chapters, got ${allChapters.length}`);
 }
 
-if (allQuestions.length !== 300) {
-  throw new Error(`Expected 300 questions, got ${allQuestions.length}`);
+if (allQuestions.length !== 396) {
+  throw new Error(`Expected 396 questions, got ${allQuestions.length}`);
 }
 
 const qMap = new Map();
@@ -61,11 +62,22 @@ for (const ch of allChapters) {
   }
 }
 
+const subjects = [...original.subjects];
+if (!subjects.some(s => s.id === 'patty')) {
+  subjects.push({
+    id: "patty",
+    title: "Patty 英文特訓",
+    desc: "會考・翰林全冊・文法實戰・英檢字彙",
+    color: "#4f46e5",
+    icon: "🅰️"
+  });
+}
+
 const compiled = {
-  version: 3,
-  title: "學習島嶼題庫（七年級翰林版）",
-  note: "依據臺灣 108 課綱國中七年級上學期翰林版教材精心編寫，收錄 7 大科目、25 大單元、共 300 道會考核心題庫與素養精選詳解。",
-  subjects: original.subjects,
+  version: 4,
+  title: "學習島嶼題庫（七年級翰林版 + Patty 英文特訓島）",
+  note: "依據臺灣 108 課綱教材與 Patty 英文會考/英檢專題整合，收錄 8 大科目、33 大單元、共 396 道核心題庫與素養精選詳解。",
+  subjects,
   chapters: allChapters,
   questions: allQuestions,
   resources: original.resources,
@@ -73,5 +85,5 @@ const compiled = {
 };
 
 fs.writeFileSync(originalPath, JSON.stringify(compiled, null, 2), 'utf8');
-console.log('Successfully compiled data/questions.json with 25 chapters and 300 questions!');
+console.log('Successfully compiled data/questions.json with 33 chapters and 396 questions!');
 
