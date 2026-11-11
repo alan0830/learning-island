@@ -103,10 +103,15 @@ async function renderHome() {
     (chBySub[c.subject_id] ||= []).push(c);
   }
 
+  const allChaptersBySub = {};
+  for (const c of (content?.chapters || [])) {
+    (allChaptersBySub[c.subject_id] ||= []).push(c);
+  }
+
   const totalStars = (stats?.chapters || []).reduce((a, c) => a + c.stars, 0);
   const maxStars = (content?.chapters || []).length * 3;
   const mastered = (stats?.chapters || []).reduce((a, c) => a + c.mastered, 0);
-  const totalQ = content?.questions_count || 300;
+  const totalQ = content?.questions_count || 396;
 
   app.innerHTML = `
     <div class="portal-sea">
@@ -114,7 +119,7 @@ async function renderHome() {
         <header class="portal-header">
           <div class="portal-title">
             <h1>🏝️ 國中學習群島</h1>
-            <p>選一座島全部逛，或從下面挑一章，只練那一章的範圍。</p>
+            <p>點選任一座主題島嶼，進入 3D 群島探索重點講義、實戰題庫與會考小船！</p>
           </div>
           <div class="portal-tools">
             <div class="pill-tool pill-stars" title="全島星星累積">
@@ -139,21 +144,24 @@ async function renderHome() {
           </div>
         </header>
 
-        <!-- 7 科展示島座群 (Pedestals) -->
-        <nav class="isles-grid" id="isles-grid" aria-label="七大主題群島">
+        <!-- 8 大主題展示島座群 (Pedestals) - 4x2 完美平衡佈局 -->
+        <nav class="isles-grid" id="isles-grid" aria-label="八大主題群島">
           ${content.subjects.map(s => {
-            const chs = chBySub[s.id] || [];
-            const st = chs.reduce((a, c) => a + c.stars, 0);
-            const tq = chs.reduce((a, c) => a + c.total_questions, 0);
-            const ms = chs.reduce((a, c) => a + c.mastered, 0);
+            const allChs = allChaptersBySub[s.id] || [];
+            const statChs = chBySub[s.id] || [];
+            const st = statChs.reduce((a, c) => a + (c.stars || 0), 0);
+            const tq = allChs.reduce((a, c) => a + (c.total_questions || 12), 0);
+            const maxSt = allChs.length * 3;
             return `
               <div class="isle-item" data-subject="${s.id}" style="--isle-color:${s.color}" onclick="openIsland('${s.id}')">
                 ${window.renderIslandSVG ? window.renderIslandSVG(s.id) : `<div style="font-size:48px">${s.icon}</div>`}
                 <div class="isle-card">
                   <b>${esc(s.title)}島</b>
                   <span class="tag">${esc(s.desc)}</span>
-                  <span class="meta">${chs.length} 章 · ${tq} 題</span>
-                  <div class="stars-badge">★ ${st} / ${chs.length * 3}</div>
+                  <div class="meta-row">
+                    <span class="meta">${allChs.length} 章 · ${tq} 題</span>
+                  </div>
+                  <div class="stars-badge">★ ${st} / ${maxSt}</div>
                 </div>
               </div>
             `;
@@ -161,67 +169,7 @@ async function renderHome() {
         </nav>
       </div>
     </div>
-
-    <!-- 課程章節總覽目錄 (Directory) -->
-    <main class="wrap directory-section">
-      <div class="directory-header">
-        <h2>七年級 翰林版群島課程總覽</h2>
-        <p>依課本章節挑選進度，各科章節都有獨立知識講義與闖關題庫。</p>
-      </div>
-
-      <div class="chapter-directory-grid">
-        ${content.subjects.map(s => {
-          const chs = (content.chapters || []).filter(c => c.subject_id === s.id);
-          const stMap = Object.fromEntries((chBySub[s.id] || []).map(c => [c.id, c]));
-          return `
-            <div class="subject-group" data-subject="${s.id}">
-              <div class="subject-group-title">
-                <span>${s.icon} ${esc(s.title)}島</span>
-                <span class="pill-ch-count">${chs.length} 個章節</span>
-              </div>
-              <div class="subject-group-rows">
-                ${chs.map((c, i) => {
-                  const chStat = stMap[c.id] || {};
-                  const stars = chStat.stars || 0;
-                  const shortName = String(c.title || '').replace(/^第\s*\d+\s*章\s*/, '');
-                  return `
-                    <div class="ch-directory-row" data-subject="${s.id}" style="--row-color:${s.color}" onclick="openIsland('${s.id}','${c.id}')">
-                      <div class="num">${i + 1}</div>
-                      <div class="mid">
-                        <b>${esc(shortName)}</b>
-                        <span>${esc(c.subtitle)}</span>
-                      </div>
-                      <div class="right-badge">
-                        <span class="badge-isle">${esc(s.title)}島</span>
-                        <span class="badge-stars">★ ${stars}/3</span>
-                      </div>
-                    </div>
-                  `;
-                }).join('')}
-              </div>
-            </div>
-          `;
-        }).join('')}
-      </div>
-    </main>
   `;
-
-  // 滑鼠移到上方島嶼時，亮起下方對應科目的所有章節
-  document.querySelectorAll('.isle-item').forEach(item => {
-    const sid = item.dataset.subject;
-    const onHover = () => {
-      document.body.classList.add('hl');
-      document.querySelectorAll('.ch-directory-row').forEach(row => {
-        row.classList.toggle('highlight', row.dataset.subject === sid);
-      });
-    };
-    const onLeave = () => {
-      document.body.classList.remove('hl');
-      document.querySelectorAll('.ch-directory-row').forEach(row => row.classList.remove('highlight'));
-    };
-    item.addEventListener('mouseenter', onHover);
-    item.addEventListener('mouseleave', onLeave);
-  });
 }
 
 /* ================= 2. 島嶼 3D 分割畫面 (SPLIT SCREEN VIEW) ================= */
