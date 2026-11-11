@@ -346,9 +346,10 @@ body.hl .ch-directory-row.highlight {
   background: #0f1d27;
 }
 
-/* 左側 3D 舞台 */
+/* 左側 3D 舞台 (佔比 2/5 = 40%) */
 .island-stage {
-  flex: 1;
+  flex: 0 0 40%;
+  width: 40%;
   position: relative;
   height: 100%;
   overflow: hidden;
@@ -440,21 +441,24 @@ body.hl .ch-directory-row.highlight {
 /* 浮動頂部 HUD 控制列 */
 .stage-hud-top {
   position: absolute;
-  top: 14px;
-  left: 16px;
-  right: 16px;
+  top: 12px;
+  left: 12px;
+  right: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   pointer-events: none;
   z-index: 10;
+  gap: 6px;
+  flex-wrap: wrap;
 }
 
 .hud-group {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   pointer-events: auto;
+  flex-wrap: wrap;
 }
 
 .hud-pill {
@@ -462,16 +466,17 @@ body.hl .ch-directory-row.highlight {
   border: 1px solid var(--line);
   color: #fff;
   border-radius: 999px;
-  padding: 6px 14px;
-  font-size: 13.5px;
+  padding: 5px 11px;
+  font-size: 12.5px;
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(6px);
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   transition: all 0.16s ease;
+  white-space: nowrap;
 }
 
 .hud-pill:hover {
@@ -487,24 +492,28 @@ body.hl .ch-directory-row.highlight {
 
 .stage-hud-bottom {
   position: absolute;
-  bottom: 16px;
+  bottom: 14px;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(22, 32, 38, 0.88);
   border: 1px solid var(--line);
   border-radius: 999px;
-  padding: 6px 18px;
-  font-size: 13px;
+  padding: 5px 16px;
+  font-size: 12px;
   color: var(--muted);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
   pointer-events: none;
   z-index: 10;
   white-space: nowrap;
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* 右側深色抽屜面板 (THE ISLAND INDEX) */
+/* 右側深色抽屜面板 (佔比 3/5 = 60%) */
 .island-drawer {
-  width: 480px;
+  flex: 0 0 60%;
+  width: 60%;
   max-width: 100vw;
   height: 100%;
   background: var(--panel);
@@ -516,18 +525,26 @@ body.hl .ch-directory-row.highlight {
   flex-direction: column;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
+  .island-stage { flex: 0 0 45%; width: 45%; }
+  .island-drawer { flex: 0 0 55%; width: 55%; }
+}
+
+@media (max-width: 820px) {
   .island-view-container { flex-direction: column; }
-  .island-stage { height: 45vh; }
-  .island-drawer { width: 100%; height: 55vh; }
+  .island-stage { flex: none; width: 100%; height: 38vh; }
+  .island-drawer { flex: 1; width: 100%; height: 62vh; border-left: 0; border-top: 1px solid var(--panel-line); }
 }
 
 .drawer-content {
-  padding: 24px;
+  padding: 28px 36px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 20px;
   color: #f5f5f4;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 /* 抽屜頂部 Eyebrow & 標題 */
@@ -542,22 +559,29 @@ body.hl .ch-directory-row.highlight {
 .drawer-title h2 {
   margin: 2px 0 4px;
   font-family: var(--f-display);
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 400;
   color: #fff;
 }
 
 .drawer-title p {
   margin: 0;
-  font-size: 14px;
+  font-size: 14.5px;
   color: #a8a29e;
+  line-height: 1.5;
 }
 
-/* 進度指標卡片群 */
+/* 進度指標卡片群：60% 寬度下橫排 4 欄呈現，寬敞俐落 */
 .drawer-progress-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 1200px) {
+  .drawer-progress-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .prog-box {

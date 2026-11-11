@@ -227,6 +227,7 @@
     camera = new THREE.PerspectiveCamera(38, width / height, 0.5, 400);
     defaultCam.pos = new THREE.Vector3(0, 48, 54);
     defaultCam.tgt = new THREE.Vector3(0, 0, 0);
+    updateCameraFit();
     camera.position.copy(defaultCam.pos);
 
     // Controls
@@ -270,6 +271,12 @@
 
     clock = new THREE.Clock();
     window.addEventListener('resize', onResize);
+    if (window.ResizeObserver && domContainer) {
+      try {
+        resizeObserver = new ResizeObserver(() => onResize());
+        resizeObserver.observe(domContainer);
+      } catch (e) {}
+    }
     loop();
     return true;
   }
@@ -532,12 +539,29 @@
     updatePins();
   }
 
+  function updateCameraFit() {
+    if (!camera) return;
+    const aspect = camera.aspect;
+    if (aspect < 1.0) {
+      // 40% 寬度或較窄視窗時，稍微調適 FOV 與預設距離，確保四周小島完整置中不裁切
+      camera.fov = Math.min(52, (38 / aspect) * 0.86);
+      defaultCam.pos.set(0, 56, 68);
+    } else {
+      camera.fov = 38;
+      defaultCam.pos.set(0, 48, 54);
+    }
+    camera.updateProjectionMatrix();
+  }
+
+  let resizeObserver = null;
+
   function onResize() {
     if (!renderer || !camera || !domContainer) return;
     const w = domContainer.clientWidth || window.innerWidth;
     const h = domContainer.clientHeight || window.innerHeight;
+    if (w === 0 || h === 0) return;
     camera.aspect = w / h;
-    camera.updateProjectionMatrix();
+    updateCameraFit();
     renderer.setSize(w, h);
   }
 
@@ -545,6 +569,10 @@
     isDestroyed = true;
     if (animId) cancelAnimationFrame(animId);
     window.removeEventListener('resize', onResize);
+    if (resizeObserver && domContainer) {
+      try { resizeObserver.unobserve(domContainer); } catch(e){}
+      resizeObserver = null;
+    }
     if (renderer && renderer.domElement && renderer.domElement.parentNode) {
       renderer.domElement.parentNode.removeChild(renderer.domElement);
     }
